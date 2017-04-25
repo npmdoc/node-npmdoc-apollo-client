@@ -1,0 +1,3504 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/apollographql/apollo-client#readme">apollo-client (v1.0.4)</a>
+</h1>
+<h4>A simple yet functional GraphQL client.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.apollo-client">module apollo-client</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ApolloClient">
+            function <span class="apidocSignatureSpan">apollo-client.</span>ApolloClient
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ApolloError">
+            function <span class="apidocSignatureSpan">apollo-client.</span>ApolloError
+            <span class="apidocSignatureSpan">(_a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.HTTPBatchedNetworkInterface">
+            function <span class="apidocSignatureSpan">apollo-client.</span>HTTPBatchedNetworkInterface
+            <span class="apidocSignatureSpan">(uri, batchInterval, fetchOpts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.HTTPFetchNetworkInterface">
+            function <span class="apidocSignatureSpan">apollo-client.</span>HTTPFetchNetworkInterface
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.IntrospectionFragmentMatcher">
+            function <span class="apidocSignatureSpan">apollo-client.</span>IntrospectionFragmentMatcher
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ObservableQuery">
+            function <span class="apidocSignatureSpan">apollo-client.</span>ObservableQuery
+            <span class="apidocSignatureSpan">(_a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.addTypenameToDocument">
+            function <span class="apidocSignatureSpan">apollo-client.</span>addTypenameToDocument
+            <span class="apidocSignatureSpan">(doc)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.createApolloReducer">
+            function <span class="apidocSignatureSpan">apollo-client.</span>createApolloReducer
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.createApolloStore">
+            function <span class="apidocSignatureSpan">apollo-client.</span>createApolloStore
+            <span class="apidocSignatureSpan">(_a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.createBatchingNetworkInterface">
+            function <span class="apidocSignatureSpan">apollo-client.</span>createBatchingNetworkInterface
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.createFragmentMap">
+            function <span class="apidocSignatureSpan">apollo-client.</span>createFragmentMap
+            <span class="apidocSignatureSpan">(fragments)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.createNetworkInterface">
+            function <span class="apidocSignatureSpan">apollo-client.</span>createNetworkInterface
+            <span class="apidocSignatureSpan">(uriOrInterfaceOpts, secondArgOpts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.default">
+            function <span class="apidocSignatureSpan">apollo-client.</span>default
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.getFragmentDefinitions">
+            function <span class="apidocSignatureSpan">apollo-client.</span>getFragmentDefinitions
+            <span class="apidocSignatureSpan">(doc)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.getQueryDefinition">
+            function <span class="apidocSignatureSpan">apollo-client.</span>getQueryDefinition
+            <span class="apidocSignatureSpan">(doc)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.printAST">
+            function <span class="apidocSignatureSpan">apollo-client.</span>printAST
+            <span class="apidocSignatureSpan">(ast)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.readQueryFromStore">
+            function <span class="apidocSignatureSpan">apollo-client.</span>readQueryFromStore
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.toIdValue">
+            function <span class="apidocSignatureSpan">apollo-client.</span>toIdValue
+            <span class="apidocSignatureSpan">(id, generated)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.writeQueryToStore">
+            function <span class="apidocSignatureSpan">apollo-client.</span>writeQueryToStore
+            <span class="apidocSignatureSpan">(_a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">apollo-client.</span>ApolloClient.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">apollo-client.</span>ApolloError.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">apollo-client.</span>HTTPBatchedNetworkInterface.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">apollo-client.</span>HTTPFetchNetworkInterface.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">apollo-client.</span>IntrospectionFragmentMatcher.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">apollo-client.</span>NetworkStatus</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">apollo-client.</span>ObservableQuery.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.apollo-client.ApolloClient">module apollo-client.ApolloClient</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ApolloClient.ApolloClient">
+            function <span class="apidocSignatureSpan">apollo-client.</span>ApolloClient
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.apollo-client.ApolloClient.prototype">module apollo-client.ApolloClient.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ApolloClient.prototype.__actionHookForDevTools">
+            function <span class="apidocSignatureSpan">apollo-client.ApolloClient.prototype.</span>__actionHookForDevTools
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ApolloClient.prototype.getInitialState">
+            function <span class="apidocSignatureSpan">apollo-client.ApolloClient.prototype.</span>getInitialState
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ApolloClient.prototype.initProxy">
+            function <span class="apidocSignatureSpan">apollo-client.ApolloClient.prototype.</span>initProxy
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ApolloClient.prototype.initStore">
+            function <span class="apidocSignatureSpan">apollo-client.ApolloClient.prototype.</span>initStore
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ApolloClient.prototype.mutate">
+            function <span class="apidocSignatureSpan">apollo-client.ApolloClient.prototype.</span>mutate
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ApolloClient.prototype.query">
+            function <span class="apidocSignatureSpan">apollo-client.ApolloClient.prototype.</span>query
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ApolloClient.prototype.readFragment">
+            function <span class="apidocSignatureSpan">apollo-client.ApolloClient.prototype.</span>readFragment
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ApolloClient.prototype.readQuery">
+            function <span class="apidocSignatureSpan">apollo-client.ApolloClient.prototype.</span>readQuery
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ApolloClient.prototype.reducer">
+            function <span class="apidocSignatureSpan">apollo-client.ApolloClient.prototype.</span>reducer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ApolloClient.prototype.resetStore">
+            function <span class="apidocSignatureSpan">apollo-client.ApolloClient.prototype.</span>resetStore
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ApolloClient.prototype.setStore">
+            function <span class="apidocSignatureSpan">apollo-client.ApolloClient.prototype.</span>setStore
+            <span class="apidocSignatureSpan">(store)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ApolloClient.prototype.subscribe">
+            function <span class="apidocSignatureSpan">apollo-client.ApolloClient.prototype.</span>subscribe
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ApolloClient.prototype.watchQuery">
+            function <span class="apidocSignatureSpan">apollo-client.ApolloClient.prototype.</span>watchQuery
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ApolloClient.prototype.writeFragment">
+            function <span class="apidocSignatureSpan">apollo-client.ApolloClient.prototype.</span>writeFragment
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ApolloClient.prototype.writeQuery">
+            function <span class="apidocSignatureSpan">apollo-client.ApolloClient.prototype.</span>writeQuery
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.apollo-client.ApolloError">module apollo-client.ApolloError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ApolloError.ApolloError">
+            function <span class="apidocSignatureSpan">apollo-client.</span>ApolloError
+            <span class="apidocSignatureSpan">(_a)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.apollo-client.ApolloError.prototype">module apollo-client.ApolloError.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ApolloError.prototype.constructor">
+            function <span class="apidocSignatureSpan">apollo-client.ApolloError.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(_a)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.apollo-client.HTTPBatchedNetworkInterface">module apollo-client.HTTPBatchedNetworkInterface</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.HTTPBatchedNetworkInterface.HTTPBatchedNetworkInterface">
+            function <span class="apidocSignatureSpan">apollo-client.</span>HTTPBatchedNetworkInterface
+            <span class="apidocSignatureSpan">(uri, batchInterval, fetchOpts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.apollo-client.HTTPBatchedNetworkInterface.prototype">module apollo-client.HTTPBatchedNetworkInterface.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.HTTPBatchedNetworkInterface.prototype.applyBatchAfterwares">
+            function <span class="apidocSignatureSpan">apollo-client.HTTPBatchedNetworkInterface.prototype.</span>applyBatchAfterwares
+            <span class="apidocSignatureSpan">(_a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.HTTPBatchedNetworkInterface.prototype.applyBatchMiddlewares">
+            function <span class="apidocSignatureSpan">apollo-client.HTTPBatchedNetworkInterface.prototype.</span>applyBatchMiddlewares
+            <span class="apidocSignatureSpan">(_a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.HTTPBatchedNetworkInterface.prototype.batchQuery">
+            function <span class="apidocSignatureSpan">apollo-client.HTTPBatchedNetworkInterface.prototype.</span>batchQuery
+            <span class="apidocSignatureSpan">(requests)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.HTTPBatchedNetworkInterface.prototype.batchedFetchFromRemoteEndpoint">
+            function <span class="apidocSignatureSpan">apollo-client.HTTPBatchedNetworkInterface.prototype.</span>batchedFetchFromRemoteEndpoint
+            <span class="apidocSignatureSpan">(batchRequestAndOptions)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.HTTPBatchedNetworkInterface.prototype.constructor">
+            function <span class="apidocSignatureSpan">apollo-client.HTTPBatchedNetworkInterface.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(uri, batchInterval, fetchOpts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.HTTPBatchedNetworkInterface.prototype.query">
+            function <span class="apidocSignatureSpan">apollo-client.HTTPBatchedNetworkInterface.prototype.</span>query
+            <span class="apidocSignatureSpan">(request)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.HTTPBatchedNetworkInterface.prototype.use">
+            function <span class="apidocSignatureSpan">apollo-client.HTTPBatchedNetworkInterface.prototype.</span>use
+            <span class="apidocSignatureSpan">(middlewares)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.HTTPBatchedNetworkInterface.prototype.useAfter">
+            function <span class="apidocSignatureSpan">apollo-client.HTTPBatchedNetworkInterface.prototype.</span>useAfter
+            <span class="apidocSignatureSpan">(afterwares)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.apollo-client.HTTPFetchNetworkInterface">module apollo-client.HTTPFetchNetworkInterface</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.HTTPFetchNetworkInterface.HTTPFetchNetworkInterface">
+            function <span class="apidocSignatureSpan">apollo-client.</span>HTTPFetchNetworkInterface
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.apollo-client.HTTPFetchNetworkInterface.prototype">module apollo-client.HTTPFetchNetworkInterface.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.HTTPFetchNetworkInterface.prototype.applyAfterwares">
+            function <span class="apidocSignatureSpan">apollo-client.HTTPFetchNetworkInterface.prototype.</span>applyAfterwares
+            <span class="apidocSignatureSpan">(_a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.HTTPFetchNetworkInterface.prototype.applyMiddlewares">
+            function <span class="apidocSignatureSpan">apollo-client.HTTPFetchNetworkInterface.prototype.</span>applyMiddlewares
+            <span class="apidocSignatureSpan">(requestAndOptions)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.HTTPFetchNetworkInterface.prototype.constructor">
+            function <span class="apidocSignatureSpan">apollo-client.HTTPFetchNetworkInterface.prototype.</span>constructor
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.HTTPFetchNetworkInterface.prototype.fetchFromRemoteEndpoint">
+            function <span class="apidocSignatureSpan">apollo-client.HTTPFetchNetworkInterface.prototype.</span>fetchFromRemoteEndpoint
+            <span class="apidocSignatureSpan">(_a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.HTTPFetchNetworkInterface.prototype.query">
+            function <span class="apidocSignatureSpan">apollo-client.HTTPFetchNetworkInterface.prototype.</span>query
+            <span class="apidocSignatureSpan">(request)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.HTTPFetchNetworkInterface.prototype.use">
+            function <span class="apidocSignatureSpan">apollo-client.HTTPFetchNetworkInterface.prototype.</span>use
+            <span class="apidocSignatureSpan">(middlewares)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.HTTPFetchNetworkInterface.prototype.useAfter">
+            function <span class="apidocSignatureSpan">apollo-client.HTTPFetchNetworkInterface.prototype.</span>useAfter
+            <span class="apidocSignatureSpan">(afterwares)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.apollo-client.IntrospectionFragmentMatcher">module apollo-client.IntrospectionFragmentMatcher</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.IntrospectionFragmentMatcher.IntrospectionFragmentMatcher">
+            function <span class="apidocSignatureSpan">apollo-client.</span>IntrospectionFragmentMatcher
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.apollo-client.IntrospectionFragmentMatcher.prototype">module apollo-client.IntrospectionFragmentMatcher.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.IntrospectionFragmentMatcher.prototype.match">
+            function <span class="apidocSignatureSpan">apollo-client.IntrospectionFragmentMatcher.prototype.</span>match
+            <span class="apidocSignatureSpan">(idValue, typeCondition, context)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.IntrospectionFragmentMatcher.prototype.parseIntrospectionResult">
+            function <span class="apidocSignatureSpan">apollo-client.IntrospectionFragmentMatcher.prototype.</span>parseIntrospectionResult
+            <span class="apidocSignatureSpan">(introspectionResultData)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.apollo-client.ObservableQuery">module apollo-client.ObservableQuery</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ObservableQuery.ObservableQuery">
+            function <span class="apidocSignatureSpan">apollo-client.</span>ObservableQuery
+            <span class="apidocSignatureSpan">(_a)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.apollo-client.ObservableQuery.prototype">module apollo-client.ObservableQuery.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ObservableQuery.prototype.constructor">
+            function <span class="apidocSignatureSpan">apollo-client.ObservableQuery.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(_a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ObservableQuery.prototype.currentResult">
+            function <span class="apidocSignatureSpan">apollo-client.ObservableQuery.prototype.</span>currentResult
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ObservableQuery.prototype.fetchMore">
+            function <span class="apidocSignatureSpan">apollo-client.ObservableQuery.prototype.</span>fetchMore
+            <span class="apidocSignatureSpan">(fetchMoreOptions)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ObservableQuery.prototype.getLastResult">
+            function <span class="apidocSignatureSpan">apollo-client.ObservableQuery.prototype.</span>getLastResult
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ObservableQuery.prototype.onSubscribe">
+            function <span class="apidocSignatureSpan">apollo-client.ObservableQuery.prototype.</span>onSubscribe
+            <span class="apidocSignatureSpan">(observer)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ObservableQuery.prototype.refetch">
+            function <span class="apidocSignatureSpan">apollo-client.ObservableQuery.prototype.</span>refetch
+            <span class="apidocSignatureSpan">(variables)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ObservableQuery.prototype.result">
+            function <span class="apidocSignatureSpan">apollo-client.ObservableQuery.prototype.</span>result
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ObservableQuery.prototype.setOptions">
+            function <span class="apidocSignatureSpan">apollo-client.ObservableQuery.prototype.</span>setOptions
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ObservableQuery.prototype.setUpQuery">
+            function <span class="apidocSignatureSpan">apollo-client.ObservableQuery.prototype.</span>setUpQuery
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ObservableQuery.prototype.setVariables">
+            function <span class="apidocSignatureSpan">apollo-client.ObservableQuery.prototype.</span>setVariables
+            <span class="apidocSignatureSpan">(variables, tryFetch)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ObservableQuery.prototype.startPolling">
+            function <span class="apidocSignatureSpan">apollo-client.ObservableQuery.prototype.</span>startPolling
+            <span class="apidocSignatureSpan">(pollInterval)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ObservableQuery.prototype.stopPolling">
+            function <span class="apidocSignatureSpan">apollo-client.ObservableQuery.prototype.</span>stopPolling
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ObservableQuery.prototype.subscribeToMore">
+            function <span class="apidocSignatureSpan">apollo-client.ObservableQuery.prototype.</span>subscribeToMore
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ObservableQuery.prototype.tearDownQuery">
+            function <span class="apidocSignatureSpan">apollo-client.ObservableQuery.prototype.</span>tearDownQuery
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apollo-client.ObservableQuery.prototype.updateQuery">
+            function <span class="apidocSignatureSpan">apollo-client.ObservableQuery.prototype.</span>updateQuery
+            <span class="apidocSignatureSpan">(mapFn)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.apollo-client" id="apidoc.module.apollo-client">module apollo-client</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ApolloClient" id="apidoc.element.apollo-client.ApolloClient">
+        function <span class="apidocSignatureSpan">apollo-client.</span>ApolloClient
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ApolloClient(options) {
+    if (options === void 0) { options = {}; }
+    var _this = this;
+    this.middleware = function () {
+        return function (store) {
+            _this.setStore(store);
+            return function (next) { return function (action) {
+                var previousApolloState = _this.queryManager.selectApolloState(store);
+                var returnValue = next(action);
+                var newApolloState = _this.queryManager.selectApolloState(store);
+                if (newApolloState !== previousApolloState) {
+                    _this.queryManager.broadcastNewStore(store.getState());
+                }
+                if (_this.devToolsHookCb) {
+                    _this.devToolsHookCb({
+                        action: action,
+                        state: _this.queryManager.getApolloState(),
+                        dataWithOptimisticResults: _this.queryManager.getDataWithOptimisticResults(),
+                    });
+                }
+                return returnValue;
+            }; };
+        };
+    };
+    var dataIdFromObject = options.dataIdFromObject;
+    var networkInterface = options.networkInterface, reduxRootSelector = options.reduxRootSelector, initialState = options.initialState
+, _a = options.ssrMode, ssrMode = _a === void 0 ? false : _a, _b = options.ssrForceFetchDelay, ssrForceFetchDelay = _b === void
+0 ? 0 : _b, _c = options.addTypename, addTypename = _c === void 0 ? true : _c, customResolvers = options.customResolvers, connectToDevTools
+ = options.connectToDevTools, fragmentMatcher = options.fragmentMatcher, _d = options.queryDeduplication, queryDeduplication = _d
+ === void 0 ? true : _d;
+    if (typeof reduxRootSelector === 'function') {
+        this.reduxRootSelector = reduxRootSelector;
+    }
+    else if (typeof reduxRootSelector !== 'undefined') {
+        throw new Error('"reduxRootSelector" must be a function.');
+    }
+    if (typeof fragmentMatcher === 'undefined') {
+        this.fragmentMatcher = new HeuristicFragmentMatcher();
+    }
+    else {
+        this.fragmentMatcher = fragmentMatcher;
+    }
+    this.initialState = initialState ? initialState : {};
+    this.networkInterface = networkInterface ? networkInterface :
+        createNetworkInterface({ uri: '/graphql' });
+    this.addTypename = addTypename;
+    this.disableNetworkFetches = ssrMode || ssrForceFetchDelay &gt; 0;
+    this.dataId = dataIdFromObject = dataIdFromObject || defaultDataIdFromObject;
+    this.fieldWithArgs = storeKeyNameFromFieldNameAndArgs;
+    this.queryDeduplication = queryDeduplication;
+    if (ssrForceFetchDelay) {
+        setTimeout(function () { return _this.disableNetworkFetches = false; }, ssrForceFetchDelay);
+    }
+    this.reducerConfig = {
+        dataIdFromObject: dataIdFromObject,
+        customResolvers: customResolvers,
+        addTypename: addTypename,
+        fragmentMatcher: this.fragmentMatcher.match,
+    };
+    this.watchQuery = this.watchQuery.bind(this);
+    this.query = this.query.bind(this);
+    this.mutate = this.mutate.bind(this);
+    this.setStore = this.setStore.bind(this);
+    this.resetStore = this.resetStore.bind(this);
+    var defaultConnectToDevTools = !isProduction() &amp;&amp;
+        typeof window !== 'undefined' &amp;&amp; (!window.__APOLLO_CLIENT__);
+    if (typeof connectToDevTools === 'undefined' ? defaultConnectToDevTools : connectToDevTools) {
+        window.__APOLLO_CLIENT__ = this;
+    }
+    if (!hasSuggestedDevtools &amp;&amp; !isProduction()) {
+        hasSuggestedDevtools = true;
+        if (typeof window !== 'undefined' &amp;&amp; window.document &amp;&amp; window.top === window.self) {
+            if (typeof window.__APOLLO_DEVTOOLS_GLOBAL_HOOK__ === 'undefined') {
+                if (navigator.userAgent.indexOf('Chrome') &gt; -1) {
+                    console.debug('Download the Apollo DevTools ' +
+                        'for a better development experience: ' +
+                        'https://chrome.google.com/webstore/detail/apollo-client-developer-t/jdkknkkbebbapilgoeccciglkfbmbnfm');
+                }
+            }
+        }
+    }
+    this.version = version;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ApolloError" id="apidoc.element.apollo-client.ApolloError">
+        function <span class="apidocSignatureSpan">apollo-client.</span>ApolloError
+        <span class="apidocSignatureSpan">(_a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ApolloError(_a) {
+    var graphQLErrors = _a.graphQLErrors, networkError = _a.networkError, errorMessage = _a.errorMessage, extraInfo = _a.extraInfo
+;
+    var _this = _super.call(this, errorMessage) || this;
+    _this.graphQLErrors = graphQLErrors || [];
+    _this.networkError = networkError || null;
+    if (!errorMessage) {
+        _this.message = generateErrorMessage(_this);
+    }
+    else {
+        _this.message = errorMessage;
+    }
+    _this.extraInfo = extraInfo;
+    return _this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.HTTPBatchedNetworkInterface" id="apidoc.element.apollo-client.HTTPBatchedNetworkInterface">
+        function <span class="apidocSignatureSpan">apollo-client.</span>HTTPBatchedNetworkInterface
+        <span class="apidocSignatureSpan">(uri, batchInterval, fetchOpts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function HTTPBatchedNetworkInterface(uri, batchInterval, fetchOpts) {
+    var _this = _super.call(this, uri, fetchOpts) || this;
+    if (typeof batchInterval !== 'number') {
+        throw new Error("batchInterval must be a number, got " + batchInterval);
+    }
+    _this.batcher = new QueryBatcher({
+        batchInterval: batchInterval,
+        batchFetchFunction: _this.batchQuery.bind(_this),
+    });
+    return _this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.HTTPFetchNetworkInterface" id="apidoc.element.apollo-client.HTTPFetchNetworkInterface">
+        function <span class="apidocSignatureSpan">apollo-client.</span>HTTPFetchNetworkInterface
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function HTTPFetchNetworkInterface() {
+    return _super !== null &amp;&amp; _super.apply(this, arguments) || this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.IntrospectionFragmentMatcher" id="apidoc.element.apollo-client.IntrospectionFragmentMatcher">
+        function <span class="apidocSignatureSpan">apollo-client.</span>IntrospectionFragmentMatcher
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function IntrospectionFragmentMatcher(options) {
+    if (options &amp;&amp; options.introspectionQueryResultData) {
+        this.possibleTypesMap = this.parseIntrospectionResult(options.introspectionQueryResultData);
+        this.isReady = true;
+    }
+    else {
+        this.isReady = false;
+    }
+    this.match = this.match.bind(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ObservableQuery" id="apidoc.element.apollo-client.ObservableQuery">
+        function <span class="apidocSignatureSpan">apollo-client.</span>ObservableQuery
+        <span class="apidocSignatureSpan">(_a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ObservableQuery(_a) {
+    var scheduler = _a.scheduler, options = _a.options, _b = _a.shouldSubscribe, shouldSubscribe = _b === void 0 ? true : _b;
+    var _this = this;
+    var queryManager = scheduler.queryManager;
+    var queryId = queryManager.generateQueryId();
+    var subscriberFunction = function (observer) {
+        return _this.onSubscribe(observer);
+    };
+    _this = _super.call(this, subscriberFunction) || this;
+    _this.isCurrentlyPolling = false;
+    _this.options = options;
+    _this.variables = _this.options.variables || {};
+    _this.scheduler = scheduler;
+    _this.queryManager = queryManager;
+    _this.queryId = queryId;
+    _this.shouldSubscribe = shouldSubscribe;
+    _this.observers = [];
+    _this.subscriptionHandles = [];
+    return _this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.addTypenameToDocument" id="apidoc.element.apollo-client.addTypenameToDocument">
+        function <span class="apidocSignatureSpan">apollo-client.</span>addTypenameToDocument
+        <span class="apidocSignatureSpan">(doc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function addTypenameToDocument(doc) {
+    checkDocument(doc);
+    var docClone = cloneDeep(doc);
+    docClone.definitions.forEach(function (definition) {
+        var isRoot = definition.kind === 'OperationDefinition';
+        addTypenameToSelectionSet(definition.selectionSet, isRoot);
+    });
+    return docClone;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.createApolloReducer" id="apidoc.element.apollo-client.createApolloReducer">
+        function <span class="apidocSignatureSpan">apollo-client.</span>createApolloReducer
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createApolloReducer(config) {
+    return function apolloReducer(state, action) {
+        if (state === void 0) { state = {}; }
+        try {
+            var newState = {
+                queries: queries(state.queries, action),
+                mutations: mutations(state.mutations, action),
+                data: data(state.data, action, state.queries, state.mutations, config),
+                optimistic: [],
+                reducerError: null,
+            };
+            newState.optimistic = optimistic(state.optimistic, action, newState, config);
+            if (state.data === newState.data &amp;&amp;
+                state.mutations === newState.mutations &amp;&amp;
+                state.queries === newState.queries &amp;&amp;
+                state.optimistic === newState.optimistic &amp;&amp;
+                state.reducerError === newState.reducerError) {
+                return state;
+            }
+            return newState;
+        }
+        catch (reducerError) {
+            return __assign$2({}, state, { reducerError: createReducerError(reducerError, action) });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.createApolloStore" id="apidoc.element.apollo-client.createApolloStore">
+        function <span class="apidocSignatureSpan">apollo-client.</span>createApolloStore
+        <span class="apidocSignatureSpan">(_a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createApolloStore(_a) {
+    var _b = _a === void 0 ? {} : _a, _c = _b.reduxRootKey, reduxRootKey = _c === void 0 ? 'apollo' : _c, initialState = _b.initialState
+, _d = _b.config, config = _d === void 0 ? {} : _d, _e = _b.reportCrashes, reportCrashes = _e === void 0 ? true : _e, logger = _b
+.logger;
+    var enhancers = [];
+    var middlewares = [];
+    if (reportCrashes) {
+        middlewares.push(crashReporter);
+    }
+    if (logger) {
+        middlewares.push(logger);
+    }
+    if (middlewares.length &gt; 0) {
+        enhancers.push(redux.applyMiddleware.apply(void 0, middlewares));
+    }
+    if (typeof window !== 'undefined') {
+        var anyWindow = window;
+        if (anyWindow.devToolsExtension) {
+            enhancers.push(anyWindow.devToolsExtension());
+        }
+    }
+    var compose$$1 = redux.compose;
+    if (initialState &amp;&amp; initialState[reduxRootKey] &amp;&amp; initialState[reduxRootKey]['queries']) {
+        throw new Error('Apollo initial state may not contain queries, only data');
+    }
+    if (initialState &amp;&amp; initialState[reduxRootKey] &amp;&amp; initialState[reduxRootKey]['mutations']) {
+        throw new Error('Apollo initial state may not contain mutations, only data');
+    }
+    return redux.createStore(redux.combineReducers((_f = {}, _f[reduxRootKey] = createApolloReducer(config), _f)), initialState,
+compose$$1.apply(void 0, enhancers));
+    var _f;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.createBatchingNetworkInterface" id="apidoc.element.apollo-client.createBatchingNetworkInterface">
+        function <span class="apidocSignatureSpan">apollo-client.</span>createBatchingNetworkInterface
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createBatchingNetworkInterface(options) {
+    if (!options) {
+        throw new Error('You must pass an options argument to createNetworkInterface.');
+    }
+    return new HTTPBatchedNetworkInterface(options.uri, options.batchInterval, options.opts || {});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.createFragmentMap" id="apidoc.element.apollo-client.createFragmentMap">
+        function <span class="apidocSignatureSpan">apollo-client.</span>createFragmentMap
+        <span class="apidocSignatureSpan">(fragments)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createFragmentMap(fragments) {
+    if (fragments === void 0) { fragments = []; }
+    var symTable = {};
+    fragments.forEach(function (fragment) {
+        symTable[fragment.name.value] = fragment;
+    });
+    return symTable;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.createNetworkInterface" id="apidoc.element.apollo-client.createNetworkInterface">
+        function <span class="apidocSignatureSpan">apollo-client.</span>createNetworkInterface
+        <span class="apidocSignatureSpan">(uriOrInterfaceOpts, secondArgOpts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createNetworkInterface(uriOrInterfaceOpts, secondArgOpts) {
+    if (secondArgOpts === void 0) { secondArgOpts = {}; }
+    if (!uriOrInterfaceOpts) {
+        throw new Error('You must pass an options argument to createNetworkInterface.');
+    }
+    var uri;
+    var opts;
+    if (typeof uriOrInterfaceOpts === 'string') {
+        console.warn("Passing the URI as the first argument to createNetworkInterface is deprecated as of Apollo Client 0.5. Please
+ pass it as the\"uri\" property of the network interface options.");
+        opts = secondArgOpts;
+        uri = uriOrInterfaceOpts;
+    }
+    else {
+        opts = uriOrInterfaceOpts.opts;
+        uri = uriOrInterfaceOpts.uri;
+    }
+    return new HTTPFetchNetworkInterface(uri, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.default" id="apidoc.element.apollo-client.default">
+        function <span class="apidocSignatureSpan">apollo-client.</span>default
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ApolloClient(options) {
+    if (options === void 0) { options = {}; }
+    var _this = this;
+    this.middleware = function () {
+        return function (store) {
+            _this.setStore(store);
+            return function (next) { return function (action) {
+                var previousApolloState = _this.queryManager.selectApolloState(store);
+                var returnValue = next(action);
+                var newApolloState = _this.queryManager.selectApolloState(store);
+                if (newApolloState !== previousApolloState) {
+                    _this.queryManager.broadcastNewStore(store.getState());
+                }
+                if (_this.devToolsHookCb) {
+                    _this.devToolsHookCb({
+                        action: action,
+                        state: _this.queryManager.getApolloState(),
+                        dataWithOptimisticResults: _this.queryManager.getDataWithOptimisticResults(),
+                    });
+                }
+                return returnValue;
+            }; };
+        };
+    };
+    var dataIdFromObject = options.dataIdFromObject;
+    var networkInterface = options.networkInterface, reduxRootSelector = options.reduxRootSelector, initialState = options.initialState
+, _a = options.ssrMode, ssrMode = _a === void 0 ? false : _a, _b = options.ssrForceFetchDelay, ssrForceFetchDelay = _b === void
+0 ? 0 : _b, _c = options.addTypename, addTypename = _c === void 0 ? true : _c, customResolvers = options.customResolvers, connectToDevTools
+ = options.connectToDevTools, fragmentMatcher = options.fragmentMatcher, _d = options.queryDeduplication, queryDeduplication = _d
+ === void 0 ? true : _d;
+    if (typeof reduxRootSelector === 'function') {
+        this.reduxRootSelector = reduxRootSelector;
+    }
+    else if (typeof reduxRootSelector !== 'undefined') {
+        throw new Error('"reduxRootSelector" must be a function.');
+    }
+    if (typeof fragmentMatcher === 'undefined') {
+        this.fragmentMatcher = new HeuristicFragmentMatcher();
+    }
+    else {
+        this.fragmentMatcher = fragmentMatcher;
+    }
+    this.initialState = initialState ? initialState : {};
+    this.networkInterface = networkInterface ? networkInterface :
+        createNetworkInterface({ uri: '/graphql' });
+    this.addTypename = addTypename;
+    this.disableNetworkFetches = ssrMode || ssrForceFetchDelay &gt; 0;
+    this.dataId = dataIdFromObject = dataIdFromObject || defaultDataIdFromObject;
+    this.fieldWithArgs = storeKeyNameFromFieldNameAndArgs;
+    this.queryDeduplication = queryDeduplication;
+    if (ssrForceFetchDelay) {
+        setTimeout(function () { return _this.disableNetworkFetches = false; }, ssrForceFetchDelay);
+    }
+    this.reducerConfig = {
+        dataIdFromObject: dataIdFromObject,
+        customResolvers: customResolvers,
+        addTypename: addTypename,
+        fragmentMatcher: this.fragmentMatcher.match,
+    };
+    this.watchQuery = this.watchQuery.bind(this);
+    this.query = this.query.bind(this);
+    this.mutate = this.mutate.bind(this);
+    this.setStore = this.setStore.bind(this);
+    this.resetStore = this.resetStore.bind(this);
+    var defaultConnectToDevTools = !isProduction() &amp;&amp;
+        typeof window !== 'undefined' &amp;&amp; (!window.__APOLLO_CLIENT__);
+    if (typeof connectToDevTools === 'undefined' ? defaultConnectToDevTools : connectToDevTools) {
+        window.__APOLLO_CLIENT__ = this;
+    }
+    if (!hasSuggestedDevtools &amp;&amp; !isProduction()) {
+        hasSuggestedDevtools = true;
+        if (typeof window !== 'undefined' &amp;&amp; window.document &amp;&amp; window.top === window.self) {
+            if (typeof window.__APOLLO_DEVTOOLS_GLOBAL_HOOK__ === 'undefined') {
+                if (navigator.userAgent.indexOf('Chrome') &gt; -1) {
+                    console.debug('Download the Apollo DevTools ' +
+                        'for a better development experience: ' +
+                        'https://chrome.google.com/webstore/detail/apollo-client-developer-t/jdkknkkbebbapilgoeccciglkfbmbnfm');
+                }
+            }
+        }
+    }
+    this.version = version;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.getFragmentDefinitions" id="apidoc.element.apollo-client.getFragmentDefinitions">
+        function <span class="apidocSignatureSpan">apollo-client.</span>getFragmentDefinitions
+        <span class="apidocSignatureSpan">(doc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getFragmentDefinitions(doc) {
+    var fragmentDefinitions = doc.definitions.filter(function (definition) {
+        if (definition.kind === 'FragmentDefinition') {
+            return true;
+        }
+        else {
+            return false;
+        }
+    });
+    return fragmentDefinitions;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.getQueryDefinition" id="apidoc.element.apollo-client.getQueryDefinition">
+        function <span class="apidocSignatureSpan">apollo-client.</span>getQueryDefinition
+        <span class="apidocSignatureSpan">(doc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getQueryDefinition(doc) {
+    checkDocument(doc);
+    var queryDef = null;
+    doc.definitions.map(function (definition) {
+        if (definition.kind === 'OperationDefinition'
+            &amp;&amp; definition.operation === 'query') {
+            queryDef = definition;
+        }
+    });
+    if (!queryDef) {
+        throw new Error('Must contain a query definition.');
+    }
+    return queryDef;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.printAST" id="apidoc.element.apollo-client.printAST">
+        function <span class="apidocSignatureSpan">apollo-client.</span>printAST
+        <span class="apidocSignatureSpan">(ast)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function print(ast) {
+  return (0, _visitor.visit)(ast, { leave: printDocASTReducer });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.readQueryFromStore" id="apidoc.element.apollo-client.readQueryFromStore">
+        function <span class="apidocSignatureSpan">apollo-client.</span>readQueryFromStore
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function readQueryFromStore(options) {
+    var optsPatch = { returnPartialData: false };
+    return diffQueryAgainstStore(__assign$8({}, options, optsPatch)).result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.toIdValue" id="apidoc.element.apollo-client.toIdValue">
+        function <span class="apidocSignatureSpan">apollo-client.</span>toIdValue
+        <span class="apidocSignatureSpan">(id, generated)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toIdValue(id, generated) {
+    if (generated === void 0) { generated = false; }
+    return {
+        type: 'id',
+        id: id,
+        generated: generated,
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.writeQueryToStore" id="apidoc.element.apollo-client.writeQueryToStore">
+        function <span class="apidocSignatureSpan">apollo-client.</span>writeQueryToStore
+        <span class="apidocSignatureSpan">(_a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function writeQueryToStore(_a) {
+    var result = _a.result, query = _a.query, _b = _a.store, store = _b === void 0 ? {} : _b, variables = _a.variables, dataIdFromObject
+ = _a.dataIdFromObject, _c = _a.fragmentMap, fragmentMap = _c === void 0 ? {} : _c;
+    var queryDefinition = getQueryDefinition(query);
+    return writeSelectionSetToStore({
+        dataId: 'ROOT_QUERY',
+        result: result,
+        selectionSet: queryDefinition.selectionSet,
+        context: {
+            store: store,
+            variables: variables,
+            dataIdFromObject: dataIdFromObject,
+            fragmentMap: fragmentMap,
+        },
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.apollo-client.ApolloClient" id="apidoc.module.apollo-client.ApolloClient">module apollo-client.ApolloClient</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ApolloClient.ApolloClient" id="apidoc.element.apollo-client.ApolloClient.ApolloClient">
+        function <span class="apidocSignatureSpan">apollo-client.</span>ApolloClient
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ApolloClient(options) {
+    if (options === void 0) { options = {}; }
+    var _this = this;
+    this.middleware = function () {
+        return function (store) {
+            _this.setStore(store);
+            return function (next) { return function (action) {
+                var previousApolloState = _this.queryManager.selectApolloState(store);
+                var returnValue = next(action);
+                var newApolloState = _this.queryManager.selectApolloState(store);
+                if (newApolloState !== previousApolloState) {
+                    _this.queryManager.broadcastNewStore(store.getState());
+                }
+                if (_this.devToolsHookCb) {
+                    _this.devToolsHookCb({
+                        action: action,
+                        state: _this.queryManager.getApolloState(),
+                        dataWithOptimisticResults: _this.queryManager.getDataWithOptimisticResults(),
+                    });
+                }
+                return returnValue;
+            }; };
+        };
+    };
+    var dataIdFromObject = options.dataIdFromObject;
+    var networkInterface = options.networkInterface, reduxRootSelector = options.reduxRootSelector, initialState = options.initialState
+, _a = options.ssrMode, ssrMode = _a === void 0 ? false : _a, _b = options.ssrForceFetchDelay, ssrForceFetchDelay = _b === void
+0 ? 0 : _b, _c = options.addTypename, addTypename = _c === void 0 ? true : _c, customResolvers = options.customResolvers, connectToDevTools
+ = options.connectToDevTools, fragmentMatcher = options.fragmentMatcher, _d = options.queryDeduplication, queryDeduplication = _d
+ === void 0 ? true : _d;
+    if (typeof reduxRootSelector === 'function') {
+        this.reduxRootSelector = reduxRootSelector;
+    }
+    else if (typeof reduxRootSelector !== 'undefined') {
+        throw new Error('"reduxRootSelector" must be a function.');
+    }
+    if (typeof fragmentMatcher === 'undefined') {
+        this.fragmentMatcher = new HeuristicFragmentMatcher();
+    }
+    else {
+        this.fragmentMatcher = fragmentMatcher;
+    }
+    this.initialState = initialState ? initialState : {};
+    this.networkInterface = networkInterface ? networkInterface :
+        createNetworkInterface({ uri: '/graphql' });
+    this.addTypename = addTypename;
+    this.disableNetworkFetches = ssrMode || ssrForceFetchDelay &gt; 0;
+    this.dataId = dataIdFromObject = dataIdFromObject || defaultDataIdFromObject;
+    this.fieldWithArgs = storeKeyNameFromFieldNameAndArgs;
+    this.queryDeduplication = queryDeduplication;
+    if (ssrForceFetchDelay) {
+        setTimeout(function () { return _this.disableNetworkFetches = false; }, ssrForceFetchDelay);
+    }
+    this.reducerConfig = {
+        dataIdFromObject: dataIdFromObject,
+        customResolvers: customResolvers,
+        addTypename: addTypename,
+        fragmentMatcher: this.fragmentMatcher.match,
+    };
+    this.watchQuery = this.watchQuery.bind(this);
+    this.query = this.query.bind(this);
+    this.mutate = this.mutate.bind(this);
+    this.setStore = this.setStore.bind(this);
+    this.resetStore = this.resetStore.bind(this);
+    var defaultConnectToDevTools = !isProduction() &amp;&amp;
+        typeof window !== 'undefined' &amp;&amp; (!window.__APOLLO_CLIENT__);
+    if (typeof connectToDevTools === 'undefined' ? defaultConnectToDevTools : connectToDevTools) {
+        window.__APOLLO_CLIENT__ = this;
+    }
+    if (!hasSuggestedDevtools &amp;&amp; !isProduction()) {
+        hasSuggestedDevtools = true;
+        if (typeof window !== 'undefined' &amp;&amp; window.document &amp;&amp; window.top === window.self) {
+            if (typeof window.__APOLLO_DEVTOOLS_GLOBAL_HOOK__ === 'undefined') {
+                if (navigator.userAgent.indexOf('Chrome') &gt; -1) {
+                    console.debug('Download the Apollo DevTools ' +
+                        'for a better development experience: ' +
+                        'https://chrome.google.com/webstore/detail/apollo-client-developer-t/jdkknkkbebbapilgoeccciglkfbmbnfm');
+                }
+            }
+        }
+    }
+    this.version = version;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.apollo-client.ApolloClient.prototype" id="apidoc.module.apollo-client.ApolloClient.prototype">module apollo-client.ApolloClient.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ApolloClient.prototype.__actionHookForDevTools" id="apidoc.element.apollo-client.ApolloClient.prototype.__actionHookForDevTools">
+        function <span class="apidocSignatureSpan">apollo-client.ApolloClient.prototype.</span>__actionHookForDevTools
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">__actionHookForDevTools = function (cb) {
+    this.devToolsHookCb = cb;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ApolloClient.prototype.getInitialState" id="apidoc.element.apollo-client.ApolloClient.prototype.getInitialState">
+        function <span class="apidocSignatureSpan">apollo-client.ApolloClient.prototype.</span>getInitialState
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getInitialState = function () {
+    this.initStore();
+    return this.queryManager.getInitialState();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ApolloClient.prototype.resetStore = function () {
+    if (this.queryManager) {
+        this.queryManager.resetStore();
+    }
+};
+ApolloClient.prototype.getInitialState = function () {
+    this.initStore();
+    return this.queryManager.<span class="apidocCodeKeywordSpan">getInitialState</span>();
+};
+ApolloClient.prototype.setStore = function (store) {
+    var reduxRootSelector;
+    if (this.reduxRootSelector) {
+        reduxRootSelector = this.reduxRootSelector;
+    }
+    else {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ApolloClient.prototype.initProxy" id="apidoc.element.apollo-client.ApolloClient.prototype.initProxy">
+        function <span class="apidocSignatureSpan">apollo-client.ApolloClient.prototype.</span>initProxy
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">initProxy = function () {
+    if (!this.proxy) {
+        this.initStore();
+        this.proxy = new ReduxDataProxy(this.store, this.reduxRootSelector || defaultReduxRootSelector, this.fragmentMatcher, this
+.reducerConfig);
+    }
+    return this.proxy;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return this.queryManager.mutate(options);
+};
+ApolloClient.prototype.subscribe = function (options) {
+    this.initStore();
+    return this.queryManager.startGraphQLSubscription(options);
+};
+ApolloClient.prototype.readQuery = function (options) {
+    return this.<span class="apidocCodeKeywordSpan">initProxy</span>().readQuery(options);
+};
+ApolloClient.prototype.readFragment = function (options) {
+    return this.initProxy().readFragment(options);
+};
+ApolloClient.prototype.writeQuery = function (options) {
+    return this.initProxy().writeQuery(options);
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ApolloClient.prototype.initStore" id="apidoc.element.apollo-client.ApolloClient.prototype.initStore">
+        function <span class="apidocSignatureSpan">apollo-client.ApolloClient.prototype.</span>initStore
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">initStore = function () {
+    var _this = this;
+    if (this.store) {
+        return;
+    }
+    if (this.reduxRootSelector) {
+        throw new Error('Cannot initialize the store because "reduxRootSelector" is provided. ' +
+            'reduxRootSelector should only be used when the store is created outside of the client. ' +
+            'This may lead to unexpected results when querying the store internally. ' +
+            "Please remove that option from ApolloClient constructor.");
+    }
+    this.setStore(createApolloStore({
+        reduxRootKey: DEFAULT_REDUX_ROOT_KEY,
+        initialState: this.initialState,
+        config: this.reducerConfig,
+        logger: function (store) { return function (next) { return function (action) {
+            var result = next(action);
+            if (_this.devToolsHookCb) {
+                _this.devToolsHookCb({
+                    action: action,
+                    state: _this.queryManager.getApolloState(),
+                    dataWithOptimisticResults: _this.queryManager.getDataWithOptimisticResults(),
+                });
+            }
+            return result;
+        }; }; },
+    }));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+                }
+            }
+        }
+    }
+    this.version = version;
+}
+ApolloClient.prototype.watchQuery = function (options) {
+    this.<span class="apidocCodeKeywordSpan">initStore</span>();
+    if (this.disableNetworkFetches &amp;&amp; options.fetchPolicy === 'network-only') {
+        options = __assign({}, options, { fetchPolicy: 'cache-first' });
+    }
+    return this.queryManager.watchQuery(options);
+};
+ApolloClient.prototype.query = function (options) {
+    this.initStore();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ApolloClient.prototype.mutate" id="apidoc.element.apollo-client.ApolloClient.prototype.mutate">
+        function <span class="apidocSignatureSpan">apollo-client.ApolloClient.prototype.</span>mutate
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mutate = function (options) {
+    this.initStore();
+    return this.queryManager.mutate(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    if (this.disableNetworkFetches &amp;&amp; options.fetchPolicy === 'network-only') {
+        options = __assign({}, options, { fetchPolicy: 'cache-first' });
+    }
+    return this.queryManager.query(options);
+};
+ApolloClient.prototype.mutate = function (options) {
+    this.initStore();
+    return this.queryManager.<span class="apidocCodeKeywordSpan">mutate</span>(options);
+};
+ApolloClient.prototype.subscribe = function (options) {
+    this.initStore();
+    return this.queryManager.startGraphQLSubscription(options);
+};
+ApolloClient.prototype.readQuery = function (options) {
+    return this.initProxy().readQuery(options);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ApolloClient.prototype.query" id="apidoc.element.apollo-client.ApolloClient.prototype.query">
+        function <span class="apidocSignatureSpan">apollo-client.ApolloClient.prototype.</span>query
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">query = function (options) {
+    this.initStore();
+    if (options.fetchPolicy === 'cache-and-network') {
+        throw new Error('cache-and-network fetchPolicy can only be used with watchQuery');
+    }
+    if (this.disableNetworkFetches &amp;&amp; options.fetchPolicy === 'network-only') {
+        options = __assign$13({}, options, { fetchPolicy: 'cache-first' });
+    }
+    return this.queryManager.query(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this.initStore();
+    if (options.fetchPolicy === 'cache-and-network') {
+        throw new Error('cache-and-network fetchPolicy can only be used with watchQuery');
+    }
+    if (this.disableNetworkFetches &amp;&amp; options.fetchPolicy === 'network-only') {
+        options = __assign({}, options, { fetchPolicy: 'cache-first' });
+    }
+    return this.queryManager.<span class="apidocCodeKeywordSpan">query</span>(options);
+};
+ApolloClient.prototype.mutate = function (options) {
+    this.initStore();
+    return this.queryManager.mutate(options);
+};
+ApolloClient.prototype.subscribe = function (options) {
+    this.initStore();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ApolloClient.prototype.readFragment" id="apidoc.element.apollo-client.ApolloClient.prototype.readFragment">
+        function <span class="apidocSignatureSpan">apollo-client.ApolloClient.prototype.</span>readFragment
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readFragment = function (options) {
+    return this.initProxy().readFragment(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this.initStore();
+    return this.queryManager.startGraphQLSubscription(options);
+};
+ApolloClient.prototype.readQuery = function (options) {
+    return this.initProxy().readQuery(options);
+};
+ApolloClient.prototype.readFragment = function (options) {
+    return this.initProxy().<span class="apidocCodeKeywordSpan">readFragment</span>(options);
+};
+ApolloClient.prototype.writeQuery = function (options) {
+    return this.initProxy().writeQuery(options);
+};
+ApolloClient.prototype.writeFragment = function (options) {
+    return this.initProxy().writeFragment(options);
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ApolloClient.prototype.readQuery" id="apidoc.element.apollo-client.ApolloClient.prototype.readQuery">
+        function <span class="apidocSignatureSpan">apollo-client.ApolloClient.prototype.</span>readQuery
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readQuery = function (options) {
+    return this.initProxy().readQuery(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return this.queryManager.mutate(options);
+};
+ApolloClient.prototype.subscribe = function (options) {
+    this.initStore();
+    return this.queryManager.startGraphQLSubscription(options);
+};
+ApolloClient.prototype.readQuery = function (options) {
+    return this.initProxy().<span class="apidocCodeKeywordSpan">readQuery</span>(options);
+};
+ApolloClient.prototype.readFragment = function (options) {
+    return this.initProxy().readFragment(options);
+};
+ApolloClient.prototype.writeQuery = function (options) {
+    return this.initProxy().writeQuery(options);
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ApolloClient.prototype.reducer" id="apidoc.element.apollo-client.ApolloClient.prototype.reducer">
+        function <span class="apidocSignatureSpan">apollo-client.ApolloClient.prototype.</span>reducer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reducer = function () {
+    return createApolloReducer(this.reducerConfig);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ApolloClient.prototype.resetStore" id="apidoc.element.apollo-client.ApolloClient.prototype.resetStore">
+        function <span class="apidocSignatureSpan">apollo-client.ApolloClient.prototype.</span>resetStore
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resetStore = function () {
+    if (this.queryManager) {
+        this.queryManager.resetStore();
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            }
+            return result;
+        }; }; },
+    }));
+};
+ApolloClient.prototype.resetStore = function () {
+    if (this.queryManager) {
+        this.queryManager.<span class="apidocCodeKeywordSpan">resetStore</span>();
+    }
+};
+ApolloClient.prototype.getInitialState = function () {
+    this.initStore();
+    return this.queryManager.getInitialState();
+};
+ApolloClient.prototype.setStore = function (store) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ApolloClient.prototype.setStore" id="apidoc.element.apollo-client.ApolloClient.prototype.setStore">
+        function <span class="apidocSignatureSpan">apollo-client.ApolloClient.prototype.</span>setStore
+        <span class="apidocSignatureSpan">(store)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setStore = function (store) {
+    var reduxRootSelector;
+    if (this.reduxRootSelector) {
+        reduxRootSelector = this.reduxRootSelector;
+    }
+    else {
+        reduxRootSelector = defaultReduxRootSelector;
+    }
+    if (typeof reduxRootSelector(store.getState()) === 'undefined') {
+        throw new Error('Existing store does not use apolloReducer. Please make sure the store ' +
+            'is properly configured and "reduxRootSelector" is correctly specified.');
+    }
+    this.store = store;
+    this.queryManager = new QueryManager({
+        networkInterface: this.networkInterface,
+        reduxRootSelector: reduxRootSelector,
+        store: store,
+        addTypename: this.addTypename,
+        reducerConfig: this.reducerConfig,
+        queryDeduplication: this.queryDeduplication,
+        fragmentMatcher: this.fragmentMatcher,
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var hasSuggestedDevtools = false;
+var ApolloClient = (function () {
+function ApolloClient(options) {
+    if (options === void 0) { options = {}; }
+    var _this = this;
+    this.middleware = function () {
+        return function (store) {
+            _this.<span class="apidocCodeKeywordSpan">setStore</span>(store);
+            return function (next) { return function (action) {
+                var previousApolloState = _this.queryManager.selectApolloState(store);
+                var returnValue = next(action);
+                var newApolloState = _this.queryManager.selectApolloState(store);
+                if (newApolloState !== previousApolloState) {
+                    _this.queryManager.broadcastNewStore(store.getState());
+                }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ApolloClient.prototype.subscribe" id="apidoc.element.apollo-client.ApolloClient.prototype.subscribe">
+        function <span class="apidocSignatureSpan">apollo-client.ApolloClient.prototype.</span>subscribe
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">subscribe = function (options) {
+    this.initStore();
+    return this.queryManager.startGraphQLSubscription(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+                    subscription.unsubscribe();
+                }, 0);
+            },
+            error: function (error) {
+                reject(error);
+            },
+        };
+        subscription = that.<span class="apidocCodeKeywordSpan">subscribe</span>(observer);
+    });
+};
+ObservableQuery.prototype.currentResult = function () {
+    var _a = this.queryManager.getCurrentQueryResult(this, true), data = _a.data, partial = _a.partial;
+    var queryStoreValue = this.queryManager.getApolloState().queries[this.queryId];
+    if (queryStoreValue &amp;&amp; ((queryStoreValue.graphQLErrors &amp;&amp; queryStoreValue.graphQLErrors.length &gt; 0) ||
+        queryStoreValue.networkError)) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ApolloClient.prototype.watchQuery" id="apidoc.element.apollo-client.ApolloClient.prototype.watchQuery">
+        function <span class="apidocSignatureSpan">apollo-client.ApolloClient.prototype.</span>watchQuery
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">watchQuery = function (options) {
+    this.initStore();
+    if (this.disableNetworkFetches &amp;&amp; options.fetchPolicy === 'network-only') {
+        options = __assign$13({}, options, { fetchPolicy: 'cache-first' });
+    }
+    return this.queryManager.watchQuery(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this.version = version;
+}
+ApolloClient.prototype.watchQuery = function (options) {
+    this.initStore();
+    if (this.disableNetworkFetches &amp;&amp; options.fetchPolicy === 'network-only') {
+        options = __assign({}, options, { fetchPolicy: 'cache-first' });
+    }
+    return this.queryManager.<span class="apidocCodeKeywordSpan">watchQuery</span>(options);
+};
+ApolloClient.prototype.query = function (options) {
+    this.initStore();
+    if (options.fetchPolicy === 'cache-and-network') {
+        throw new Error('cache-and-network fetchPolicy can only be used with watchQuery');
+    }
+    if (this.disableNetworkFetches &amp;&amp; options.fetchPolicy === 'network-only') {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ApolloClient.prototype.writeFragment" id="apidoc.element.apollo-client.ApolloClient.prototype.writeFragment">
+        function <span class="apidocSignatureSpan">apollo-client.ApolloClient.prototype.</span>writeFragment
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeFragment = function (options) {
+    return this.initProxy().writeFragment(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ApolloClient.prototype.readFragment = function (options) {
+    return this.initProxy().readFragment(options);
+};
+ApolloClient.prototype.writeQuery = function (options) {
+    return this.initProxy().writeQuery(options);
+};
+ApolloClient.prototype.writeFragment = function (options) {
+    return this.initProxy().<span class="apidocCodeKeywordSpan">writeFragment</span>(options);
+};
+ApolloClient.prototype.reducer = function () {
+    return createApolloReducer(this.reducerConfig);
+};
+ApolloClient.prototype.__actionHookForDevTools = function (cb) {
+    this.devToolsHookCb = cb;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ApolloClient.prototype.writeQuery" id="apidoc.element.apollo-client.ApolloClient.prototype.writeQuery">
+        function <span class="apidocSignatureSpan">apollo-client.ApolloClient.prototype.</span>writeQuery
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeQuery = function (options) {
+    return this.initProxy().writeQuery(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ApolloClient.prototype.readQuery = function (options) {
+    return this.initProxy().readQuery(options);
+};
+ApolloClient.prototype.readFragment = function (options) {
+    return this.initProxy().readFragment(options);
+};
+ApolloClient.prototype.writeQuery = function (options) {
+    return this.initProxy().<span class="apidocCodeKeywordSpan">writeQuery</span>(options);
+};
+ApolloClient.prototype.writeFragment = function (options) {
+    return this.initProxy().writeFragment(options);
+};
+ApolloClient.prototype.reducer = function () {
+    return createApolloReducer(this.reducerConfig);
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.apollo-client.ApolloError" id="apidoc.module.apollo-client.ApolloError">module apollo-client.ApolloError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ApolloError.ApolloError" id="apidoc.element.apollo-client.ApolloError.ApolloError">
+        function <span class="apidocSignatureSpan">apollo-client.</span>ApolloError
+        <span class="apidocSignatureSpan">(_a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ApolloError(_a) {
+    var graphQLErrors = _a.graphQLErrors, networkError = _a.networkError, errorMessage = _a.errorMessage, extraInfo = _a.extraInfo
+;
+    var _this = _super.call(this, errorMessage) || this;
+    _this.graphQLErrors = graphQLErrors || [];
+    _this.networkError = networkError || null;
+    if (!errorMessage) {
+        _this.message = generateErrorMessage(_this);
+    }
+    else {
+        _this.message = errorMessage;
+    }
+    _this.extraInfo = extraInfo;
+    return _this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.apollo-client.ApolloError.prototype" id="apidoc.module.apollo-client.ApolloError.prototype">module apollo-client.ApolloError.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ApolloError.prototype.constructor" id="apidoc.element.apollo-client.ApolloError.prototype.constructor">
+        function <span class="apidocSignatureSpan">apollo-client.ApolloError.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(_a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ApolloError(_a) {
+    var graphQLErrors = _a.graphQLErrors, networkError = _a.networkError, errorMessage = _a.errorMessage, extraInfo = _a.extraInfo
+;
+    var _this = _super.call(this, errorMessage) || this;
+    _this.graphQLErrors = graphQLErrors || [];
+    _this.networkError = networkError || null;
+    if (!errorMessage) {
+        _this.message = generateErrorMessage(_this);
+    }
+    else {
+        _this.message = errorMessage;
+    }
+    _this.extraInfo = extraInfo;
+    return _this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.apollo-client.HTTPBatchedNetworkInterface" id="apidoc.module.apollo-client.HTTPBatchedNetworkInterface">module apollo-client.HTTPBatchedNetworkInterface</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.HTTPBatchedNetworkInterface.HTTPBatchedNetworkInterface" id="apidoc.element.apollo-client.HTTPBatchedNetworkInterface.HTTPBatchedNetworkInterface">
+        function <span class="apidocSignatureSpan">apollo-client.</span>HTTPBatchedNetworkInterface
+        <span class="apidocSignatureSpan">(uri, batchInterval, fetchOpts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function HTTPBatchedNetworkInterface(uri, batchInterval, fetchOpts) {
+    var _this = _super.call(this, uri, fetchOpts) || this;
+    if (typeof batchInterval !== 'number') {
+        throw new Error("batchInterval must be a number, got " + batchInterval);
+    }
+    _this.batcher = new QueryBatcher({
+        batchInterval: batchInterval,
+        batchFetchFunction: _this.batchQuery.bind(_this),
+    });
+    return _this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.apollo-client.HTTPBatchedNetworkInterface.prototype" id="apidoc.module.apollo-client.HTTPBatchedNetworkInterface.prototype">module apollo-client.HTTPBatchedNetworkInterface.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.HTTPBatchedNetworkInterface.prototype.applyBatchAfterwares" id="apidoc.element.apollo-client.HTTPBatchedNetworkInterface.prototype.applyBatchAfterwares">
+        function <span class="apidocSignatureSpan">apollo-client.HTTPBatchedNetworkInterface.prototype.</span>applyBatchAfterwares
+        <span class="apidocSignatureSpan">(_a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">applyBatchAfterwares = function (_a) {
+    var _this = this;
+    var responses = _a.responses, options = _a.options;
+    return new Promise(function (resolve, reject) {
+        var responseObject = { responses: responses, options: options };
+        var queue = function (funcs, scope) {
+            var next = function () {
+                if (funcs.length &gt; 0) {
+                    var f = funcs.shift();
+                    if (f) {
+                        f.applyBatchAfterware.apply(scope, [responseObject, next]);
+                    }
+                }
+                else {
+                    resolve(responseObject);
+                }
+            };
+            next();
+        };
+        queue(_this._afterwares.slice(), _this);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+return new Promise(function (resolve, reject) {
+    middlewarePromise.then(function (batchRequestAndOptions) {
+        return _this.batchedFetchFromRemoteEndpoint(batchRequestAndOptions)
+            .then(function (result) {
+            var httpResponse = result;
+            if (!httpResponse.ok) {
+                return _this.<span class="apidocCodeKeywordSpan">applyBatchAfterwares</span>({ responses: [httpResponse], options
+: batchRequestAndOptions })
+                    .then(function () {
+                    var httpError = new Error("Network request failed with status " + httpResponse.status + " - \&amp;#
+x22;" + httpResponse.statusText + "\"");
+                    httpError.response = httpResponse;
+                    throw httpError;
+                });
+            }
+            return result.json();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.HTTPBatchedNetworkInterface.prototype.applyBatchMiddlewares" id="apidoc.element.apollo-client.HTTPBatchedNetworkInterface.prototype.applyBatchMiddlewares">
+        function <span class="apidocSignatureSpan">apollo-client.HTTPBatchedNetworkInterface.prototype.</span>applyBatchMiddlewares
+        <span class="apidocSignatureSpan">(_a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">applyBatchMiddlewares = function (_a) {
+    var _this = this;
+    var requests = _a.requests, options = _a.options;
+    return new Promise(function (resolve, reject) {
+        var queue = function (funcs, scope) {
+            var next = function () {
+                if (funcs.length &gt; 0) {
+                    var f = funcs.shift();
+                    if (f) {
+                        f.applyBatchMiddleware.apply(scope, [{ requests: requests, options: options }, next]);
+                    }
+                }
+                else {
+                    resolve({
+                        requests: requests,
+                        options: options,
+                    });
+                }
+            };
+            next();
+        };
+        queue(_this._middlewares.slice(), _this);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+HTTPBatchedNetworkInterface.prototype.query = function (request) {
+    return this.batcher.enqueueRequest(request);
+};
+HTTPBatchedNetworkInterface.prototype.batchQuery = function (requests) {
+    var _this = this;
+    var options = __assign$1({}, this._opts);
+    var middlewarePromise = this.<span class="apidocCodeKeywordSpan">applyBatchMiddlewares</span>({
+        requests: requests,
+        options: options,
+    });
+    return new Promise(function (resolve, reject) {
+        middlewarePromise.then(function (batchRequestAndOptions) {
+            return _this.batchedFetchFromRemoteEndpoint(batchRequestAndOptions)
+                .then(function (result) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.HTTPBatchedNetworkInterface.prototype.batchQuery" id="apidoc.element.apollo-client.HTTPBatchedNetworkInterface.prototype.batchQuery">
+        function <span class="apidocSignatureSpan">apollo-client.HTTPBatchedNetworkInterface.prototype.</span>batchQuery
+        <span class="apidocSignatureSpan">(requests)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">batchQuery = function (requests) {
+    var _this = this;
+    var options = __assign$1({}, this._opts);
+    var middlewarePromise = this.applyBatchMiddlewares({
+        requests: requests,
+        options: options,
+    });
+    return new Promise(function (resolve, reject) {
+        middlewarePromise.then(function (batchRequestAndOptions) {
+            return _this.batchedFetchFromRemoteEndpoint(batchRequestAndOptions)
+                .then(function (result) {
+                var httpResponse = result;
+                if (!httpResponse.ok) {
+                    return _this.applyBatchAfterwares({ responses: [httpResponse], options: batchRequestAndOptions })
+                        .then(function () {
+                        var httpError = new Error("Network request failed with status " + httpResponse.status + " - \"" + httpResponse
+.statusText + "\"");
+                        httpError.response = httpResponse;
+                        throw httpError;
+                    });
+                }
+                return result.json();
+            })
+                .then(function (responses) {
+                if (typeof responses.map !== 'function') {
+                    throw new Error('BatchingNetworkInterface: server response is not an array');
+                }
+                _this.applyBatchAfterwares({
+                    responses: responses,
+                    options: batchRequestAndOptions.options,
+                }).then(function (responseAndOptions) {
+                    resolve(responseAndOptions.responses);
+                }).catch(function (error) {
+                    reject(error);
+                });
+            });
+        }).catch(function (error) {
+            reject(error);
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.HTTPBatchedNetworkInterface.prototype.batchedFetchFromRemoteEndpoint" id="apidoc.element.apollo-client.HTTPBatchedNetworkInterface.prototype.batchedFetchFromRemoteEndpoint">
+        function <span class="apidocSignatureSpan">apollo-client.HTTPBatchedNetworkInterface.prototype.</span>batchedFetchFromRemoteEndpoint
+        <span class="apidocSignatureSpan">(batchRequestAndOptions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">batchedFetchFromRemoteEndpoint = function (batchRequestAndOptions) {
+    var options = {};
+    assign(options, batchRequestAndOptions.options);
+    var printedRequests = batchRequestAndOptions.requests.map(function (request) {
+        return printRequest(request);
+    });
+    return fetch(this._uri, __assign$1({}, this._opts, { body: JSON.stringify(printedRequests), method: 'POST' }, options, { headers
+: __assign$1({ Accept: '*/*', 'Content-Type': 'application/json' }, options.headers) }));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var options = __assign$1({}, this._opts);
+var middlewarePromise = this.applyBatchMiddlewares({
+    requests: requests,
+    options: options,
+});
+return new Promise(function (resolve, reject) {
+    middlewarePromise.then(function (batchRequestAndOptions) {
+        return _this.<span class="apidocCodeKeywordSpan">batchedFetchFromRemoteEndpoint</span>(batchRequestAndOptions)
+            .then(function (result) {
+            var httpResponse = result;
+            if (!httpResponse.ok) {
+                return _this.applyBatchAfterwares({ responses: [httpResponse], options: batchRequestAndOptions })
+                    .then(function () {
+                    var httpError = new Error("Network request failed with status " + httpResponse.status + " - \&amp;#
+x22;" + httpResponse.statusText + "\"");
+                    httpError.response = httpResponse;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.HTTPBatchedNetworkInterface.prototype.constructor" id="apidoc.element.apollo-client.HTTPBatchedNetworkInterface.prototype.constructor">
+        function <span class="apidocSignatureSpan">apollo-client.HTTPBatchedNetworkInterface.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(uri, batchInterval, fetchOpts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function HTTPBatchedNetworkInterface(uri, batchInterval, fetchOpts) {
+    var _this = _super.call(this, uri, fetchOpts) || this;
+    if (typeof batchInterval !== 'number') {
+        throw new Error("batchInterval must be a number, got " + batchInterval);
+    }
+    _this.batcher = new QueryBatcher({
+        batchInterval: batchInterval,
+        batchFetchFunction: _this.batchQuery.bind(_this),
+    });
+    return _this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.HTTPBatchedNetworkInterface.prototype.query" id="apidoc.element.apollo-client.HTTPBatchedNetworkInterface.prototype.query">
+        function <span class="apidocSignatureSpan">apollo-client.HTTPBatchedNetworkInterface.prototype.</span>query
+        <span class="apidocSignatureSpan">(request)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">query = function (request) {
+    return this.batcher.enqueueRequest(request);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this.initStore();
+    if (options.fetchPolicy === 'cache-and-network') {
+        throw new Error('cache-and-network fetchPolicy can only be used with watchQuery');
+    }
+    if (this.disableNetworkFetches &amp;&amp; options.fetchPolicy === 'network-only') {
+        options = __assign({}, options, { fetchPolicy: 'cache-first' });
+    }
+    return this.queryManager.<span class="apidocCodeKeywordSpan">query</span>(options);
+};
+ApolloClient.prototype.mutate = function (options) {
+    this.initStore();
+    return this.queryManager.mutate(options);
+};
+ApolloClient.prototype.subscribe = function (options) {
+    this.initStore();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.HTTPBatchedNetworkInterface.prototype.use" id="apidoc.element.apollo-client.HTTPBatchedNetworkInterface.prototype.use">
+        function <span class="apidocSignatureSpan">apollo-client.HTTPBatchedNetworkInterface.prototype.</span>use
+        <span class="apidocSignatureSpan">(middlewares)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">use = function (middlewares) {
+    var _this = this;
+    middlewares.map(function (middleware) {
+        if (typeof middleware.applyBatchMiddleware === 'function') {
+            _this._middlewares.push(middleware);
+        }
+        else {
+            throw new Error('Batch middleware must implement the applyBatchMiddleware function');
+        }
+    });
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.HTTPBatchedNetworkInterface.prototype.useAfter" id="apidoc.element.apollo-client.HTTPBatchedNetworkInterface.prototype.useAfter">
+        function <span class="apidocSignatureSpan">apollo-client.HTTPBatchedNetworkInterface.prototype.</span>useAfter
+        <span class="apidocSignatureSpan">(afterwares)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">useAfter = function (afterwares) {
+    var _this = this;
+    afterwares.map(function (afterware) {
+        if (typeof afterware.applyBatchAfterware === 'function') {
+            _this._afterwares.push(afterware);
+        }
+        else {
+            throw new Error('Batch afterware must implement the applyBatchAfterware function');
+        }
+    });
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.apollo-client.HTTPFetchNetworkInterface" id="apidoc.module.apollo-client.HTTPFetchNetworkInterface">module apollo-client.HTTPFetchNetworkInterface</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.HTTPFetchNetworkInterface.HTTPFetchNetworkInterface" id="apidoc.element.apollo-client.HTTPFetchNetworkInterface.HTTPFetchNetworkInterface">
+        function <span class="apidocSignatureSpan">apollo-client.</span>HTTPFetchNetworkInterface
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function HTTPFetchNetworkInterface() {
+    return _super !== null &amp;&amp; _super.apply(this, arguments) || this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.apollo-client.HTTPFetchNetworkInterface.prototype" id="apidoc.module.apollo-client.HTTPFetchNetworkInterface.prototype">module apollo-client.HTTPFetchNetworkInterface.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.HTTPFetchNetworkInterface.prototype.applyAfterwares" id="apidoc.element.apollo-client.HTTPFetchNetworkInterface.prototype.applyAfterwares">
+        function <span class="apidocSignatureSpan">apollo-client.HTTPFetchNetworkInterface.prototype.</span>applyAfterwares
+        <span class="apidocSignatureSpan">(_a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">applyAfterwares = function (_a) {
+    var _this = this;
+    var response = _a.response, options = _a.options;
+    return new Promise(function (resolve, reject) {
+        var responseObject = { response: response, options: options };
+        var queue = function (funcs, scope) {
+            var next = function () {
+                if (funcs.length &gt; 0) {
+                    var f = funcs.shift();
+                    if (f) {
+                        f.applyAfterware.apply(scope, [responseObject, next]);
+                    }
+                }
+                else {
+                    resolve(responseObject);
+                }
+            };
+            next();
+        };
+        queue(_this._afterwares.slice(), _this);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    HTTPFetchNetworkInterface.prototype.query = function (request) {
+var _this = this;
+var options = __assign({}, this._opts);
+return this.applyMiddlewares({
+    request: request,
+    options: options,
+}).then(function (rao) { return _this.fetchFromRemoteEndpoint.call(_this, rao); })
+    .then(function (response) { return _this.<span class="apidocCodeKeywordSpan">applyAfterwares</span>({
+    response: response,
+    options: options,
+}); })
+    .then(function (_a) {
+    var response = _a.response;
+    var httpResponse = response;
+    return httpResponse.json().catch(function () {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.HTTPFetchNetworkInterface.prototype.applyMiddlewares" id="apidoc.element.apollo-client.HTTPFetchNetworkInterface.prototype.applyMiddlewares">
+        function <span class="apidocSignatureSpan">apollo-client.HTTPFetchNetworkInterface.prototype.</span>applyMiddlewares
+        <span class="apidocSignatureSpan">(requestAndOptions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">applyMiddlewares = function (requestAndOptions) {
+    var _this = this;
+    return new Promise(function (resolve, reject) {
+        var request = requestAndOptions.request, options = requestAndOptions.options;
+        var queue = function (funcs, scope) {
+            var next = function () {
+                if (funcs.length &gt; 0) {
+                    var f = funcs.shift();
+                    if (f) {
+                        f.applyMiddleware.apply(scope, [{ request: request, options: options }, next]);
+                    }
+                }
+                else {
+                    resolve({
+                        request: request,
+                        options: options,
+                    });
+                }
+            };
+            next();
+        };
+        queue(_this._middlewares.slice(), _this);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+HTTPFetchNetworkInterface.prototype.fetchFromRemoteEndpoint = function (_a) {
+    var request = _a.request, options = _a.options;
+    return fetch(this._uri, __assign({}, this._opts, { body: JSON.stringify(printRequest(request)), method: 'POST' },
+options, { headers: __assign({ Accept: '*/*', 'Content-Type': 'application/json' }, options.headers
+) }));
+};
+HTTPFetchNetworkInterface.prototype.query = function (request) {
+    var _this = this;
+    var options = __assign({}, this._opts);
+    return this.<span class="apidocCodeKeywordSpan">applyMiddlewares</span>({
+        request: request,
+        options: options,
+    }).then(function (rao) { return _this.fetchFromRemoteEndpoint.call(_this, rao); })
+        .then(function (response) { return _this.applyAfterwares({
+        response: response,
+        options: options,
+    }); })
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.HTTPFetchNetworkInterface.prototype.constructor" id="apidoc.element.apollo-client.HTTPFetchNetworkInterface.prototype.constructor">
+        function <span class="apidocSignatureSpan">apollo-client.HTTPFetchNetworkInterface.prototype.</span>constructor
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function HTTPFetchNetworkInterface() {
+    return _super !== null &amp;&amp; _super.apply(this, arguments) || this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.HTTPFetchNetworkInterface.prototype.fetchFromRemoteEndpoint" id="apidoc.element.apollo-client.HTTPFetchNetworkInterface.prototype.fetchFromRemoteEndpoint">
+        function <span class="apidocSignatureSpan">apollo-client.HTTPFetchNetworkInterface.prototype.</span>fetchFromRemoteEndpoint
+        <span class="apidocSignatureSpan">(_a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fetchFromRemoteEndpoint = function (_a) {
+    var request = _a.request, options = _a.options;
+    return fetch(this._uri, __assign({}, this._opts, { body: JSON.stringify(printRequest(request)), method: 'POST' }, options, {
+headers: __assign({ Accept: '*/*', 'Content-Type': 'application/json' }, options.headers) }));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.HTTPFetchNetworkInterface.prototype.query" id="apidoc.element.apollo-client.HTTPFetchNetworkInterface.prototype.query">
+        function <span class="apidocSignatureSpan">apollo-client.HTTPFetchNetworkInterface.prototype.</span>query
+        <span class="apidocSignatureSpan">(request)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">query = function (request) {
+    var _this = this;
+    var options = __assign({}, this._opts);
+    return this.applyMiddlewares({
+        request: request,
+        options: options,
+    }).then(function (rao) { return _this.fetchFromRemoteEndpoint.call(_this, rao); })
+        .then(function (response) { return _this.applyAfterwares({
+        response: response,
+        options: options,
+    }); })
+        .then(function (_a) {
+        var response = _a.response;
+        var httpResponse = response;
+        return httpResponse.json().catch(function () {
+            var httpError = new Error("Network request failed with status " + response.status + " - \"" + response.statusText + "\"");
+            httpError.response = httpResponse;
+            throw httpError;
+        });
+    })
+        .then(function (payload) {
+        if (!payload.hasOwnProperty('data') &amp;&amp; !payload.hasOwnProperty('errors')) {
+            throw new Error("Server response was missing for query '" + request.debugName + "'.");
+        }
+        else {
+            return payload;
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this.initStore();
+    if (options.fetchPolicy === 'cache-and-network') {
+        throw new Error('cache-and-network fetchPolicy can only be used with watchQuery');
+    }
+    if (this.disableNetworkFetches &amp;&amp; options.fetchPolicy === 'network-only') {
+        options = __assign({}, options, { fetchPolicy: 'cache-first' });
+    }
+    return this.queryManager.<span class="apidocCodeKeywordSpan">query</span>(options);
+};
+ApolloClient.prototype.mutate = function (options) {
+    this.initStore();
+    return this.queryManager.mutate(options);
+};
+ApolloClient.prototype.subscribe = function (options) {
+    this.initStore();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.HTTPFetchNetworkInterface.prototype.use" id="apidoc.element.apollo-client.HTTPFetchNetworkInterface.prototype.use">
+        function <span class="apidocSignatureSpan">apollo-client.HTTPFetchNetworkInterface.prototype.</span>use
+        <span class="apidocSignatureSpan">(middlewares)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">use = function (middlewares) {
+    var _this = this;
+    middlewares.map(function (middleware) {
+        if (typeof middleware.applyMiddleware === 'function') {
+            _this._middlewares.push(middleware);
+        }
+        else {
+            throw new Error('Middleware must implement the applyMiddleware function');
+        }
+    });
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.HTTPFetchNetworkInterface.prototype.useAfter" id="apidoc.element.apollo-client.HTTPFetchNetworkInterface.prototype.useAfter">
+        function <span class="apidocSignatureSpan">apollo-client.HTTPFetchNetworkInterface.prototype.</span>useAfter
+        <span class="apidocSignatureSpan">(afterwares)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">useAfter = function (afterwares) {
+    var _this = this;
+    afterwares.map(function (afterware) {
+        if (typeof afterware.applyAfterware === 'function') {
+            _this._afterwares.push(afterware);
+        }
+        else {
+            throw new Error('Afterware must implement the applyAfterware function');
+        }
+    });
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.apollo-client.IntrospectionFragmentMatcher" id="apidoc.module.apollo-client.IntrospectionFragmentMatcher">module apollo-client.IntrospectionFragmentMatcher</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.IntrospectionFragmentMatcher.IntrospectionFragmentMatcher" id="apidoc.element.apollo-client.IntrospectionFragmentMatcher.IntrospectionFragmentMatcher">
+        function <span class="apidocSignatureSpan">apollo-client.</span>IntrospectionFragmentMatcher
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function IntrospectionFragmentMatcher(options) {
+    if (options &amp;&amp; options.introspectionQueryResultData) {
+        this.possibleTypesMap = this.parseIntrospectionResult(options.introspectionQueryResultData);
+        this.isReady = true;
+    }
+    else {
+        this.isReady = false;
+    }
+    this.match = this.match.bind(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.apollo-client.IntrospectionFragmentMatcher.prototype" id="apidoc.module.apollo-client.IntrospectionFragmentMatcher.prototype">module apollo-client.IntrospectionFragmentMatcher.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.IntrospectionFragmentMatcher.prototype.match" id="apidoc.element.apollo-client.IntrospectionFragmentMatcher.prototype.match">
+        function <span class="apidocSignatureSpan">apollo-client.IntrospectionFragmentMatcher.prototype.</span>match
+        <span class="apidocSignatureSpan">(idValue, typeCondition, context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">match = function (idValue, typeCondition, context) {
+    if (!this.isReady) {
+        throw new Error('FragmentMatcher.match() was called before FragmentMatcher.init()');
+    }
+    var obj = context.store[idValue.id];
+    if (!obj) {
+        return false;
+    }
+    if (!obj.__typename) {
+        throw new Error("Cannot match fragment because __typename property is missing: " + JSON.stringify(obj));
+    }
+    if (obj.__typename === typeCondition) {
+        return true;
+    }
+    var implementingTypes = this.possibleTypesMap[typeCondition];
+    if (implementingTypes &amp;&amp; implementingTypes.indexOf(obj.__typename) &gt; -1) {
+        return true;
+    }
+    return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    else {
+        this.isReady = false;
+    }
+    this.match = this.match.bind(this);
+}
+IntrospectionFragmentMatcher.prototype.match = function (idValue, typeCondition, context) {
+    if (!this.isReady) {
+        throw new Error('FragmentMatcher.<span class="apidocCodeKeywordSpan">match</span>() was called before FragmentMatcher
+.init()');
+    }
+    var obj = context.store[idValue.id];
+    if (!obj) {
+        return false;
+    }
+    if (!obj.__typename) {
+        throw new Error("Cannot match fragment because __typename property is missing: " + JSON.stringify(obj));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.IntrospectionFragmentMatcher.prototype.parseIntrospectionResult" id="apidoc.element.apollo-client.IntrospectionFragmentMatcher.prototype.parseIntrospectionResult">
+        function <span class="apidocSignatureSpan">apollo-client.IntrospectionFragmentMatcher.prototype.</span>parseIntrospectionResult
+        <span class="apidocSignatureSpan">(introspectionResultData)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseIntrospectionResult = function (introspectionResultData) {
+    var typeMap = {};
+    introspectionResultData.__schema.types.forEach(function (type) {
+        if (type.kind === 'UNION' || type.kind === 'INTERFACE') {
+            typeMap[type.name] = type.possibleTypes.map(function (implementingType) { return implementingType.name; });
+        }
+    });
+    return typeMap;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+return ObservableQuery;
+}(Observable));
+
+var IntrospectionFragmentMatcher = (function () {
+function IntrospectionFragmentMatcher(options) {
+    if (options &amp;&amp; options.introspectionQueryResultData) {
+        this.possibleTypesMap = this.<span class="apidocCodeKeywordSpan">parseIntrospectionResult</span>(options.introspectionQueryResultData
+);
+        this.isReady = true;
+    }
+    else {
+        this.isReady = false;
+    }
+    this.match = this.match.bind(this);
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.apollo-client.ObservableQuery" id="apidoc.module.apollo-client.ObservableQuery">module apollo-client.ObservableQuery</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ObservableQuery.ObservableQuery" id="apidoc.element.apollo-client.ObservableQuery.ObservableQuery">
+        function <span class="apidocSignatureSpan">apollo-client.</span>ObservableQuery
+        <span class="apidocSignatureSpan">(_a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ObservableQuery(_a) {
+    var scheduler = _a.scheduler, options = _a.options, _b = _a.shouldSubscribe, shouldSubscribe = _b === void 0 ? true : _b;
+    var _this = this;
+    var queryManager = scheduler.queryManager;
+    var queryId = queryManager.generateQueryId();
+    var subscriberFunction = function (observer) {
+        return _this.onSubscribe(observer);
+    };
+    _this = _super.call(this, subscriberFunction) || this;
+    _this.isCurrentlyPolling = false;
+    _this.options = options;
+    _this.variables = _this.options.variables || {};
+    _this.scheduler = scheduler;
+    _this.queryManager = queryManager;
+    _this.queryId = queryId;
+    _this.shouldSubscribe = shouldSubscribe;
+    _this.observers = [];
+    _this.subscriptionHandles = [];
+    return _this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.apollo-client.ObservableQuery.prototype" id="apidoc.module.apollo-client.ObservableQuery.prototype">module apollo-client.ObservableQuery.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ObservableQuery.prototype.constructor" id="apidoc.element.apollo-client.ObservableQuery.prototype.constructor">
+        function <span class="apidocSignatureSpan">apollo-client.ObservableQuery.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(_a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ObservableQuery(_a) {
+    var scheduler = _a.scheduler, options = _a.options, _b = _a.shouldSubscribe, shouldSubscribe = _b === void 0 ? true : _b;
+    var _this = this;
+    var queryManager = scheduler.queryManager;
+    var queryId = queryManager.generateQueryId();
+    var subscriberFunction = function (observer) {
+        return _this.onSubscribe(observer);
+    };
+    _this = _super.call(this, subscriberFunction) || this;
+    _this.isCurrentlyPolling = false;
+    _this.options = options;
+    _this.variables = _this.options.variables || {};
+    _this.scheduler = scheduler;
+    _this.queryManager = queryManager;
+    _this.queryId = queryId;
+    _this.shouldSubscribe = shouldSubscribe;
+    _this.observers = [];
+    _this.subscriptionHandles = [];
+    return _this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ObservableQuery.prototype.currentResult" id="apidoc.element.apollo-client.ObservableQuery.prototype.currentResult">
+        function <span class="apidocSignatureSpan">apollo-client.ObservableQuery.prototype.</span>currentResult
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">currentResult = function () {
+    var _a = this.queryManager.getCurrentQueryResult(this, true), data = _a.data, partial = _a.partial;
+    var queryStoreValue = this.queryManager.getApolloState().queries[this.queryId];
+    if (queryStoreValue &amp;&amp; ((queryStoreValue.graphQLErrors &amp;&amp; queryStoreValue.graphQLErrors.length &gt; 0) ||
+        queryStoreValue.networkError)) {
+        var error = new ApolloError({
+            graphQLErrors: queryStoreValue.graphQLErrors,
+            networkError: queryStoreValue.networkError,
+        });
+        return { data: {}, loading: false, networkStatus: queryStoreValue.networkStatus, error: error };
+    }
+    var queryLoading = !queryStoreValue || queryStoreValue.networkStatus === exports.NetworkStatus.loading;
+    var loading = (this.options.fetchPolicy === 'network-only' &amp;&amp; queryLoading)
+        || (partial &amp;&amp; this.options.fetchPolicy !== 'cache-only');
+    var networkStatus;
+    if (queryStoreValue) {
+        networkStatus = queryStoreValue.networkStatus;
+    }
+    else {
+        networkStatus = loading ? exports.NetworkStatus.loading : exports.NetworkStatus.ready;
+    }
+    return {
+        data: data,
+        loading: isNetworkRequestInFlight(networkStatus),
+        networkStatus: networkStatus,
+        partial: partial,
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ObservableQuery.prototype.fetchMore" id="apidoc.element.apollo-client.ObservableQuery.prototype.fetchMore">
+        function <span class="apidocSignatureSpan">apollo-client.ObservableQuery.prototype.</span>fetchMore
+        <span class="apidocSignatureSpan">(fetchMoreOptions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fetchMore = function (fetchMoreOptions) {
+    var _this = this;
+    if (!fetchMoreOptions.updateQuery) {
+        throw new Error('updateQuery option is required. This function defines how to update the query data with the new results
+.');
+    }
+    return Promise.resolve()
+        .then(function () {
+        var qid = _this.queryManager.generateQueryId();
+        var combinedOptions = null;
+        if (fetchMoreOptions.query) {
+            combinedOptions = fetchMoreOptions;
+        }
+        else {
+            var variables = __assign$12({}, _this.variables, fetchMoreOptions.variables);
+            combinedOptions = __assign$12({}, _this.options, fetchMoreOptions, { variables: variables });
+        }
+        combinedOptions = __assign$12({}, combinedOptions, { query: combinedOptions.query, fetchPolicy: 'network-only' });
+        return _this.queryManager.fetchQuery(qid, combinedOptions, FetchType.normal, _this.queryId);
+    })
+        .then(function (fetchMoreResult) {
+        var data = fetchMoreResult.data;
+        var reducer = fetchMoreOptions.updateQuery;
+        var mapFn = function (previousResult, _a) {
+            var variables = _a.variables;
+            var queryVariables = variables;
+            return reducer(previousResult, {
+                fetchMoreResult: data,
+                queryVariables: queryVariables,
+            });
+        };
+        _this.updateQuery(mapFn);
+        return fetchMoreResult;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ObservableQuery.prototype.getLastResult" id="apidoc.element.apollo-client.ObservableQuery.prototype.getLastResult">
+        function <span class="apidocSignatureSpan">apollo-client.ObservableQuery.prototype.</span>getLastResult
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLastResult = function () {
+    return this.lastResult;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+QueryManager.prototype.stopQuery = function (queryId) {
+    this.removeQuery(queryId);
+    this.stopQueryInStore(queryId);
+};
+QueryManager.prototype.getCurrentQueryResult = function (observableQuery, isOptimistic) {
+    if (isOptimistic === void 0) { isOptimistic = false; }
+    var _a = this.getQueryParts(observableQuery), variables = _a.variables, document = _a.document;
+    var lastResult = observableQuery.<span class="apidocCodeKeywordSpan">getLastResult</span>();
+    var queryOptions = observableQuery.options;
+    var readOptions = {
+        store: isOptimistic ? this.getDataWithOptimisticResults() : this.getApolloState().data,
+        query: document,
+        variables: variables,
+        config: this.reducerConfig,
+        previousResult: lastResult ? lastResult.data : undefined,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ObservableQuery.prototype.onSubscribe" id="apidoc.element.apollo-client.ObservableQuery.prototype.onSubscribe">
+        function <span class="apidocSignatureSpan">apollo-client.ObservableQuery.prototype.</span>onSubscribe
+        <span class="apidocSignatureSpan">(observer)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onSubscribe = function (observer) {
+    var _this = this;
+    this.observers.push(observer);
+    if (observer.next &amp;&amp; this.lastResult) {
+        observer.next(this.lastResult);
+    }
+    if (observer.error &amp;&amp; this.lastError) {
+        observer.error(this.lastError);
+    }
+    if (this.observers.length === 1) {
+        this.setUpQuery();
+    }
+    var retQuerySubscription = {
+        unsubscribe: function () {
+            if (!_this.observers.some(function (el) { return el === observer; })) {
+                return;
+            }
+            _this.observers = _this.observers.filter(function (obs) { return obs !== observer; });
+            if (_this.observers.length === 0) {
+                _this.tearDownQuery();
+            }
+        },
+    };
+    return retQuerySubscription;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+__extends$2(ObservableQuery, _super);
+function ObservableQuery(_a) {
+    var scheduler = _a.scheduler, options = _a.options, _b = _a.shouldSubscribe, shouldSubscribe = _b === void 0 ? true : _b;
+    var _this = this;
+    var queryManager = scheduler.queryManager;
+    var queryId = queryManager.generateQueryId();
+    var subscriberFunction = function (observer) {
+        return _this.<span class="apidocCodeKeywordSpan">onSubscribe</span>(observer);
+    };
+    _this = _super.call(this, subscriberFunction) || this;
+    _this.isCurrentlyPolling = false;
+    _this.options = options;
+    _this.variables = _this.options.variables || {};
+    _this.scheduler = scheduler;
+    _this.queryManager = queryManager;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ObservableQuery.prototype.refetch" id="apidoc.element.apollo-client.ObservableQuery.prototype.refetch">
+        function <span class="apidocSignatureSpan">apollo-client.ObservableQuery.prototype.</span>refetch
+        <span class="apidocSignatureSpan">(variables)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">refetch = function (variables) {
+    this.variables = __assign$12({}, this.variables, variables);
+    if (this.options.fetchPolicy === 'cache-only') {
+        return Promise.reject(new Error('cache-only fetchPolicy option should not be used together with query refetch.'));
+    }
+    this.options.variables = __assign$12({}, this.options.variables, this.variables);
+    var combinedOptions = __assign$12({}, this.options, { fetchPolicy: 'network-only' });
+    return this.queryManager.fetchQuery(this.queryId, combinedOptions, FetchType.refetch)
+        .then(function (result) { return maybeDeepFreeze(result); });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        type: 'APOLLO_STORE_RESET',
+        observableQueryIds: Object.keys(this.observableQueries),
+    });
+    Object.keys(this.observableQueries).forEach(function (queryId) {
+        var storeQuery = _this.reduxRootSelector(_this.store.getState()).queries[queryId];
+        var fetchPolicy = _this.observableQueries[queryId].observableQuery.options.fetchPolicy;
+        if (fetchPolicy !== 'cache-only') {
+            _this.observableQueries[queryId].observableQuery.<span class="apidocCodeKeywordSpan">refetch</span>();
+        }
+    });
+};
+QueryManager.prototype.startQuery = function (queryId, options, listener) {
+    this.addQueryListener(queryId, listener);
+    this.fetchQuery(queryId, options)
+        .catch(function (error) { return undefined; });
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ObservableQuery.prototype.result" id="apidoc.element.apollo-client.ObservableQuery.prototype.result">
+        function <span class="apidocSignatureSpan">apollo-client.ObservableQuery.prototype.</span>result
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">result = function () {
+    var that = this;
+    return new Promise(function (resolve, reject) {
+        var subscription = null;
+        var observer = {
+            next: function (result) {
+                resolve(result);
+                var selectedObservers = that.observers.filter(function (obs) { return obs !== observer; });
+                if (selectedObservers.length === 0) {
+                    that.queryManager.removeQuery(that.queryId);
+                }
+                setTimeout(function () {
+                    subscription.unsubscribe();
+                }, 0);
+            },
+            error: function (error) {
+                reject(error);
+            },
+        };
+        subscription = that.subscribe(observer);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    ObservableQuery.prototype.setVariables = function (variables, tryFetch) {
+if (tryFetch === void 0) { tryFetch = false; }
+var newVariables = __assign$12({}, this.variables, variables);
+if (isEqual(newVariables, this.variables) &amp;&amp; !tryFetch) {
+    if (this.observers.length === 0) {
+        return new Promise(function (resolve) { return resolve(); });
+    }
+    return this.<span class="apidocCodeKeywordSpan">result</span>();
+}
+else {
+    this.variables = newVariables;
+    if (this.observers.length === 0) {
+        return new Promise(function (resolve) { return resolve(); });
+    }
+    return this.queryManager.fetchQuery(this.queryId, __assign$12({}, this.options, { variables: this.variables }))
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ObservableQuery.prototype.setOptions" id="apidoc.element.apollo-client.ObservableQuery.prototype.setOptions">
+        function <span class="apidocSignatureSpan">apollo-client.ObservableQuery.prototype.</span>setOptions
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setOptions = function (opts) {
+    var oldOptions = this.options;
+    this.options = __assign$12({}, this.options, opts);
+    if (opts.pollInterval) {
+        this.startPolling(opts.pollInterval);
+    }
+    else if (opts.pollInterval === 0) {
+        this.stopPolling();
+    }
+    var tryFetch = (oldOptions.fetchPolicy !== 'network-only' &amp;&amp; opts.fetchPolicy === 'network-only')
+        || (oldOptions.fetchPolicy === 'cache-only' &amp;&amp; opts.fetchPolicy !== 'cache-only')
+        || false;
+    return this.setVariables(this.options.variables, tryFetch);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ObservableQuery.prototype.setUpQuery" id="apidoc.element.apollo-client.ObservableQuery.prototype.setUpQuery">
+        function <span class="apidocSignatureSpan">apollo-client.ObservableQuery.prototype.</span>setUpQuery
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setUpQuery = function () {
+    var _this = this;
+    if (this.shouldSubscribe) {
+        this.queryManager.addObservableQuery(this.queryId, this);
+    }
+    if (!!this.options.pollInterval) {
+        if (this.options.fetchPolicy === 'cache-first' || (this.options.fetchPolicy === 'cache-only')) {
+            throw new Error('Queries that specify the cache-first and cache-only fetchPolicies cannot also be polling queries.');
+        }
+        this.isCurrentlyPolling = true;
+        this.scheduler.startPollingQuery(this.options, this.queryId);
+    }
+    var observer = {
+        next: function (result) {
+            _this.lastResult = result;
+            _this.observers.forEach(function (obs) {
+                if (obs.next) {
+                    obs.next(result);
+                }
+            });
+        },
+        error: function (error) {
+            _this.observers.forEach(function (obs) {
+                if (obs.error) {
+                    obs.error(error);
+                }
+                else {
+                    console.error('Unhandled error', error.message, error.stack);
+                }
+            });
+            _this.lastError = error;
+        },
+    };
+    this.queryManager.startQuery(this.queryId, this.options, this.queryManager.queryListenerForObserver(this.queryId, this.options
+, observer));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (observer.next &amp;&amp; this.lastResult) {
+    observer.next(this.lastResult);
+}
+if (observer.error &amp;&amp; this.lastError) {
+    observer.error(this.lastError);
+}
+if (this.observers.length === 1) {
+    this.<span class="apidocCodeKeywordSpan">setUpQuery</span>();
+}
+var retQuerySubscription = {
+    unsubscribe: function () {
+        if (!_this.observers.some(function (el) { return el === observer; })) {
+            return;
+        }
+        _this.observers = _this.observers.filter(function (obs) { return obs !== observer; });
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ObservableQuery.prototype.setVariables" id="apidoc.element.apollo-client.ObservableQuery.prototype.setVariables">
+        function <span class="apidocSignatureSpan">apollo-client.ObservableQuery.prototype.</span>setVariables
+        <span class="apidocSignatureSpan">(variables, tryFetch)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setVariables = function (variables, tryFetch) {
+    if (tryFetch === void 0) { tryFetch = false; }
+    var newVariables = __assign$12({}, this.variables, variables);
+    if (isEqual(newVariables, this.variables) &amp;&amp; !tryFetch) {
+        if (this.observers.length === 0) {
+            return new Promise(function (resolve) { return resolve(); });
+        }
+        return this.result();
+    }
+    else {
+        this.variables = newVariables;
+        if (this.observers.length === 0) {
+            return new Promise(function (resolve) { return resolve(); });
+        }
+        return this.queryManager.fetchQuery(this.queryId, __assign$12({}, this.options, { variables: this.variables }))
+            .then(function (result) { return maybeDeepFreeze(result); });
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+    else if (opts.pollInterval === 0) {
+        this.stopPolling();
+    }
+    var tryFetch = (oldOptions.fetchPolicy !== 'network-only' &amp;&amp; opts.fetchPolicy === 'network-only'
+;)
+        || (oldOptions.fetchPolicy === 'cache-only' &amp;&amp; opts.fetchPolicy !== 'cache-only')
+        || false;
+    return this.<span class="apidocCodeKeywordSpan">setVariables</span>(this.options.variables, tryFetch);
+};
+ObservableQuery.prototype.setVariables = function (variables, tryFetch) {
+    if (tryFetch === void 0) { tryFetch = false; }
+    var newVariables = __assign$12({}, this.variables, variables);
+    if (isEqual(newVariables, this.variables) &amp;&amp; !tryFetch) {
+        if (this.observers.length === 0) {
+            return new Promise(function (resolve) { return resolve(); });
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ObservableQuery.prototype.startPolling" id="apidoc.element.apollo-client.ObservableQuery.prototype.startPolling">
+        function <span class="apidocSignatureSpan">apollo-client.ObservableQuery.prototype.</span>startPolling
+        <span class="apidocSignatureSpan">(pollInterval)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">startPolling = function (pollInterval) {
+    if (this.options.fetchPolicy === 'cache-first' || (this.options.fetchPolicy === 'cache-only')) {
+        throw new Error('Queries that specify the cache-first and cache-only fetchPolicies cannot also be polling queries.');
+    }
+    if (this.isCurrentlyPolling) {
+        this.scheduler.stopPollingQuery(this.queryId);
+        this.isCurrentlyPolling = false;
+    }
+    this.options.pollInterval = pollInterval;
+    this.isCurrentlyPolling = true;
+    this.scheduler.startPollingQuery(this.options, this.queryId);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        }
+    };
+};
+ObservableQuery.prototype.setOptions = function (opts) {
+    var oldOptions = this.options;
+    this.options = __assign$12({}, this.options, opts);
+    if (opts.pollInterval) {
+        this.<span class="apidocCodeKeywordSpan">startPolling</span>(opts.pollInterval);
+    }
+    else if (opts.pollInterval === 0) {
+        this.stopPolling();
+    }
+    var tryFetch = (oldOptions.fetchPolicy !== 'network-only' &amp;&amp; opts.fetchPolicy === 'network-only'
+;)
+        || (oldOptions.fetchPolicy === 'cache-only' &amp;&amp; opts.fetchPolicy !== 'cache-only')
+        || false;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ObservableQuery.prototype.stopPolling" id="apidoc.element.apollo-client.ObservableQuery.prototype.stopPolling">
+        function <span class="apidocSignatureSpan">apollo-client.ObservableQuery.prototype.</span>stopPolling
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stopPolling = function () {
+    if (this.isCurrentlyPolling) {
+        this.scheduler.stopPollingQuery(this.queryId);
+        this.options.pollInterval = undefined;
+        this.isCurrentlyPolling = false;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ObservableQuery.prototype.setOptions = function (opts) {
+    var oldOptions = this.options;
+    this.options = __assign$12({}, this.options, opts);
+    if (opts.pollInterval) {
+        this.startPolling(opts.pollInterval);
+    }
+    else if (opts.pollInterval === 0) {
+        this.<span class="apidocCodeKeywordSpan">stopPolling</span>();
+    }
+    var tryFetch = (oldOptions.fetchPolicy !== 'network-only' &amp;&amp; opts.fetchPolicy === 'network-only'
+;)
+        || (oldOptions.fetchPolicy === 'cache-only' &amp;&amp; opts.fetchPolicy !== 'cache-only')
+        || false;
+    return this.setVariables(this.options.variables, tryFetch);
+};
+ObservableQuery.prototype.setVariables = function (variables, tryFetch) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ObservableQuery.prototype.subscribeToMore" id="apidoc.element.apollo-client.ObservableQuery.prototype.subscribeToMore">
+        function <span class="apidocSignatureSpan">apollo-client.ObservableQuery.prototype.</span>subscribeToMore
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">subscribeToMore = function (options) {
+    var _this = this;
+    var observable = this.queryManager.startGraphQLSubscription({
+        query: options.document,
+        variables: options.variables,
+    });
+    var subscription = observable.subscribe({
+        next: function (data) {
+            if (options.updateQuery) {
+                var reducer_1 = options.updateQuery;
+                var mapFn = function (previousResult, _a) {
+                    var variables = _a.variables;
+                    return reducer_1(previousResult, {
+                        subscriptionData: { data: data },
+                        variables: variables,
+                    });
+                };
+                _this.updateQuery(mapFn);
+            }
+        },
+        error: function (err) {
+            if (options.onError) {
+                options.onError(err);
+            }
+            else {
+                console.error('Unhandled GraphQL subscription error', err);
+            }
+        },
+    });
+    this.subscriptionHandles.push(subscription);
+    return function () {
+        var i = _this.subscriptionHandles.indexOf(subscription);
+        if (i &gt;= 0) {
+            _this.subscriptionHandles.splice(i, 1);
+            subscription.unsubscribe();
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ObservableQuery.prototype.tearDownQuery" id="apidoc.element.apollo-client.ObservableQuery.prototype.tearDownQuery">
+        function <span class="apidocSignatureSpan">apollo-client.ObservableQuery.prototype.</span>tearDownQuery
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">tearDownQuery = function () {
+    if (this.isCurrentlyPolling) {
+        this.scheduler.stopPollingQuery(this.queryId);
+        this.isCurrentlyPolling = false;
+    }
+    this.subscriptionHandles.forEach(function (sub) { return sub.unsubscribe(); });
+    this.subscriptionHandles = [];
+    this.queryManager.stopQuery(this.queryId);
+    if (this.shouldSubscribe) {
+        this.queryManager.removeObservableQuery(this.queryId);
+    }
+    this.observers = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    var retQuerySubscription = {
+        unsubscribe: function () {
+            if (!_this.observers.some(function (el) { return el === observer; })) {
+                return;
+            }
+            _this.observers = _this.observers.filter(function (obs) { return obs !== observer; });
+            if (_this.observers.length === 0) {
+                _this.<span class="apidocCodeKeywordSpan">tearDownQuery</span>();
+            }
+        },
+    };
+    return retQuerySubscription;
+};
+ObservableQuery.prototype.setUpQuery = function () {
+    var _this = this;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apollo-client.ObservableQuery.prototype.updateQuery" id="apidoc.element.apollo-client.ObservableQuery.prototype.updateQuery">
+        function <span class="apidocSignatureSpan">apollo-client.ObservableQuery.prototype.</span>updateQuery
+        <span class="apidocSignatureSpan">(mapFn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">updateQuery = function (mapFn) {
+    var _a = this.queryManager.getQueryWithPreviousResult(this.queryId), previousResult = _a.previousResult, variables = _a.variables
+, document = _a.document;
+    var newResult = tryFunctionOrLogError(function () { return mapFn(previousResult, { variables: variables }); });
+    if (newResult) {
+        this.queryManager.store.dispatch({
+            type: 'APOLLO_UPDATE_QUERY_RESULT',
+            newResult: newResult,
+            variables: variables,
+            document: document,
+        });
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            var variables = _a.variables;
+            var queryVariables = variables;
+            return reducer(previousResult, {
+                fetchMoreResult: data,
+                queryVariables: queryVariables,
+            });
+        };
+        _this.<span class="apidocCodeKeywordSpan">updateQuery</span>(mapFn);
+        return fetchMoreResult;
+    });
+};
+ObservableQuery.prototype.subscribeToMore = function (options) {
+    var _this = this;
+    var observable = this.queryManager.startGraphQLSubscription({
+        query: options.document,
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
